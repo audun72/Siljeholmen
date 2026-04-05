@@ -1,0 +1,2504 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hyttene på Siljeholmen</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bark:   #3b2a1a;
+      --moss:   #4a5e3a;
+      --cream:  #f5efe6;
+      --stone:  #8a7a6a;
+      --fog:    #ede6da;
+      --accent: #7a9e5c;
+      --text:   #2c1f0f;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background:
+        linear-gradient(to bottom, rgba(30,18,8,0.55) 0%, rgba(30,18,8,0.2) 60%, var(--cream) 100%),
+        url('https://i.ibb.co/QFjFfV5W/FB-bilde-siljeholmen.jpg') center/cover no-repeat;
+      min-height: 360px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px 80px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 6vw, 4rem);
+      color: #fff;
+      letter-spacing: 0.04em;
+      text-shadow: 0 2px 16px rgba(0,0,0,0.45);
+      margin-bottom: 10px;
+    }
+
+    .hero .subtitle {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.75);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 300;
+    }
+
+    /* ── INTRO ── */
+    .intro-section {
+      max-width: 860px;
+      margin: -30px auto 0;
+      background: #fff;
+      border-radius: 4px;
+      box-shadow: 0 4px 30px rgba(59,42,26,0.12);
+      padding: 36px 44px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .intro-section p {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: var(--text);
+      font-weight: 300;
+    }
+
+    /* ── SECTION HEADER ── */
+    .section-header {
+      text-align: center;
+      padding: 56px 20px 14px;
+    }
+
+    .section-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--bark);
+    }
+
+    .divider {
+      width: 60px;
+      height: 3px;
+      background: var(--accent);
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    /* ── CABIN LIST ── */
+    .cabins-grid {
+      max-width: 860px;
+      margin: 36px auto 80px;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 44px;
+    }
+
+    /* ── CABIN CARD ── */
+    .cabin-card {
+      background: #fff;
+      border-radius: 6px;
+      box-shadow: 0 2px 20px rgba(59,42,26,0.10);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.25s ease;
+    }
+
+    .cabin-card:hover {
+      box-shadow: 0 8px 36px rgba(59,42,26,0.18);
+    }
+
+    /* ── IMAGES ── */
+    .cabin-images {
+      display: grid;
+      grid-template-columns: 3fr 2.42fr;
+      gap: 3px;
+      background: #ffffff;
+    }
+
+    .cabin-images .img-landscape {
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ffffff;
+      height: 349px;
+    }
+
+    .cabin-images .img-landscape img {
+      width: 100%;
+      height: 349px;
+      display: block;
+      object-fit: cover;
+      transition: transform 0.45s ease;
+    }
+
+    .cabin-images .img-landscape:hover img {
+      transform: scale(1.06);
+    }
+
+    .cabin-images .img-square {
+      overflow: hidden;
+      height: 349px;
+      align-self: stretch;
+    }
+
+    .cabin-images .img-square img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      background: #ffffff;
+      transition: transform 0.45s ease;
+    }
+
+    .cabin-images .img-square:hover img {
+      transform: scale(1.08);
+    }
+
+    /* ── CABIN BODY ── */
+    .cabin-body {
+      padding: 24px 28px 28px;
+    }
+
+    .cabin-number {
+      font-size: 0.70rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .cabin-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.55rem;
+      color: var(--bark);
+      margin-bottom: 12px;
+    }
+
+    .cabin-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .tag {
+      font-size: 0.76rem;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .tag-location {
+      background: var(--fog);
+      color: var(--moss);
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .tag-location:hover {
+      background: #c8d8b8;
+      transform: scale(1.04);
+    }
+
+    .tag-residents { background: #f0e8dc; color: var(--bark); }
+
+    .cabin-desc {
+      font-size: 0.96rem;
+      line-height: 1.8;
+      color: #4a3b2b;
+      font-weight: 300;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.8rem;
+      color: var(--stone);
+      border-top: 1px solid var(--fog);
+    }
+
+    /* ══════════════════════════════
+       MAP POPUP MODAL
+    ═══════════════════════════════ */
+    .map-modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.65);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .map-modal-overlay.active {
+      display: flex;
+    }
+
+    .map-modal {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      max-width: 580px;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      animation: popIn 0.2s ease;
+    }
+
+    @keyframes popIn {
+      from { transform: scale(0.92); opacity: 0; }
+      to   { transform: scale(1);    opacity: 1; }
+    }
+
+    .map-modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 20px;
+      background: var(--bark);
+      color: #fff;
+    }
+
+    .map-modal-header h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+    }
+
+    .map-close {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+      line-height: 1;
+      opacity: 0.8;
+      padding: 0 4px;
+    }
+
+    .map-close:hover { opacity: 1; }
+
+    /* ── MAP CONTAINER ── */
+    .map-container {
+      position: relative;
+      width: 100%;
+      /* 16:9-ish ratio matching the map image proportions */
+      padding-bottom: 127.9%;
+      overflow: hidden;
+    }
+
+    .map-container img.map-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* Red pin */
+    .map-pin {
+      position: absolute;
+      transform: translate(-50%, -100%);
+      pointer-events: none;
+    }
+
+    .map-pin svg {
+      width: 32px;
+      height: 40px;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.45));
+    }
+
+    /* Label bubble above pin */
+    .map-pin-label {
+      position: absolute;
+      transform: translate(-50%, calc(-100% - 44px));
+      background: var(--bark);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 10px;
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      .intro-section { padding: 26px 20px; margin: -20px 14px 0; }
+      .cabin-images { grid-template-columns: 1fr; }
+      .cabin-images .img-landscape,
+      .cabin-images .img-landscape img,
+      .cabin-images .img-square,
+      .cabin-images .img-square img {
+        height: auto;
+        min-height: 0;
+        aspect-ratio: 4 / 3;
+      }
+      .cabin-body { padding: 20px 18px 22px; }
+      .map-modal { max-width: 100%; }
+    }
+
+    /* ══ STICKY CABIN INDEX ══ */
+    .cabin-index {
+      position: fixed;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 500;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      max-height: 88vh;
+      overflow-y: auto;
+      scrollbar-width: none;
+      background: rgba(255,255,255,0.93);
+      border-radius: 10px;
+      padding: 8px 5px;
+      box-shadow: 0 2px 18px rgba(59,42,26,0.15);
+      border: 1px solid var(--fog);
+    }
+    .cabin-index::-webkit-scrollbar { display: none; }
+    .cabin-index a {
+      display: block;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.63rem;
+      font-weight: 700;
+      color: var(--stone);
+      text-decoration: none;
+      text-align: center;
+      padding: 2px 5px;
+      border-radius: 4px;
+      line-height: 1.5;
+      transition: background 0.12s, color 0.12s;
+      white-space: nowrap;
+    }
+    .cabin-index a:hover { background: var(--bark); color: #fff; }
+    .cabin-index a.active { background: var(--accent); color: #fff; }
+    @media (max-width: 960px) { .cabin-index { display: none; } }
+
+    /* ══ MAP HOVER TOOLTIP ══ */
+    .map-tooltip {
+      position: absolute;
+      pointer-events: auto;
+      cursor: pointer;
+      z-index: 10;
+      display: none;
+      flex-direction: column;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+      overflow: hidden;
+      width: 160px;
+      transform: translate(-50%, calc(-100% - 14px));
+      border: 2px solid var(--bark);
+    }
+    .map-tooltip img {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+      display: block;
+    }
+    .map-tooltip-label {
+      background: var(--bark);
+      color: #fff;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-align: center;
+      padding: 4px 8px;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="cabin-index" id="cabinIndex">
+<a href="#hytte-1">1</a>
+<a href="#hytte-2">2</a>
+<a href="#hytte-3">3</a>
+<a href="#hytte-4">4</a>
+<a href="#hytte-5">5</a>
+<a href="#hytte-6">6</a>
+<a href="#hytte-9">9</a>
+<a href="#hytte-11">11</a>
+<a href="#hytte-13">13</a>
+<a href="#hytte-14">14</a>
+<a href="#hytte-15">15</a>
+<a href="#hytte-16">16</a>
+<a href="#hytte-18">18</a>
+<a href="#hytte-20">20</a>
+<a href="#hytte-21-Nord">21 Nord</a>
+<a href="#hytte-21-Syd">21 Syd</a>
+<a href="#hytte-25">25</a>
+<a href="#hytte-26">26</a>
+<a href="#hytte-28">28</a>
+<a href="#hytte-29">29</a>
+<a href="#hytte-33">33</a>
+<a href="#hytte-35">35</a>
+<a href="#hytte-37">37</a>
+<a href="#hytte-39">39</a>
+<a href="#hytte-41">41</a>
+<a href="#hytte-43">43</a>
+<a href="#hytte-45">45</a>
+<a href="#hytte-47">47</a>
+<a href="#hytte-48">48</a>
+<a href="#hytte-51">51</a>
+<a href="#hytte-53">53</a>
+<a href="#hytte-54">54</a>
+<a href="#hytte-56">56</a>
+<a href="#hytte-59">59</a>
+<a href="#hytte-61">61</a>
+<a href="#hytte-63">63</a>
+<a href="#hytte-69">69</a>
+<a href="#hytte-74">74</a>
+<a href="#hytte-76">76</a>
+<a href="#hytte-78">78</a>
+<a href="#hytte-79">79</a>
+<a href="#hytte-80">80</a>
+<a href="#hytte-82">82</a>
+<a href="#hytte-84">84</a>
+<a href="#hytte-86">86</a>
+<a href="#hytte-88">88</a>
+<a href="#hytte-90">90</a>
+<a href="#hytte-92">92</a>
+<a href="#hytte-93">93</a>
+<a href="#hytte-94-syd">94 Syd</a>
+<a href="#hytte-94-nord">94 Nord</a>
+<a href="#hytte-95">95</a>
+<a href="#hytte-96">96</a>
+<a href="#hytte-97">97</a>
+<a href="#hytte-98">98</a>
+<a href="#hytte-100">100</a>
+<a href="#hytte-101">101</a>
+<a href="#hytte-102">102</a>
+<a href="#hytte-108">108</a>
+<a href="#hytte-109">109</a>
+<a href="#hytte-111">111</a>
+<a href="#hytte-112">112</a>
+<a href="#hytte-202">202</a>
+<a href="#hytte-205">205</a>
+<a href="#hytte-206">206</a>
+<a href="#hytte-208">208</a>
+<a href="#hytte-210">210</a>
+<a href="#hytte-211">211</a>
+<a href="#hytte-212">212</a>
+<a href="#hytte-213">213</a>
+<a href="#hytte-215">215</a>
+<a href="#hytte-217">217</a>
+<a href="#hytte-220">220</a>
+<a href="#hytte-221">221</a>
+<a href="#hytte-222">222</a>
+<a href="#hytte-223">223</a>
+<a href="#hytte-224">224</a>
+<a href="#hytte-225">225</a>
+<a href="#hytte-226">226</a>
+<a href="#hytte-227">227</a>
+<a href="#hytte-228">228</a>
+<a href="#hytte-232">232</a>
+<a href="#hytte-234">234</a>
+<a href="#hytte-236">236</a>
+<a href="#hytte-238">238</a>
+<a href="#hytte-239">239</a>
+<a href="#hytte-240">240</a>
+<a href="#hytte-242">242</a>
+<a href="#hytte-244">244</a>
+<a href="#hytte-245">245</a>
+<a href="#hytte-246">246</a>
+<a href="#hytte-247">247</a>
+<a href="#hytte-248">248</a>
+<a href="#hytte-249">249</a>
+<a href="#hytte-250">250</a>
+<a href="#hytte-261">261</a>
+<a href="#hytte-263">263</a>
+</nav>
+
+<!-- ══════════════════════════════
+     MAP POPUP MODAL
+═══════════════════════════════ -->
+<div class="map-modal-overlay" id="mapModal" onclick="closeMapIfOverlay(event)">
+  <div class="map-modal">
+    <div class="map-modal-header">
+      <h3 id="modalTitle">Siljeholmen – kart</h3>
+      <button class="map-close" onclick="closeMap()">✕</button>
+    </div>
+    <div class="map-container">
+      <img class="map-bg" src="https://i.ibb.co/zWTSh3BY/Kart-Siljeholmen.jpg" alt="Kart over Siljeholmen" />
+      <!-- Pin injected by JS -->
+      <div id="mapPin" class="map-pin" style="display:none">
+        <svg viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 0C9.373 0 4 5.373 4 12c0 9 12 28 12 28S28 21 28 12C28 5.373 22.627 0 16 0Z" fill="#e63030"/>
+          <circle cx="16" cy="12" r="5" fill="white"/>
+        </svg>
+      </div>
+      <div id="mapPinLabel" class="map-pin-label" style="display:none"></div>
+      <div id="mapTooltip" class="map-tooltip"><img id="mapTooltipImg" src="" alt="" /><div id="mapTooltipLabel" class="map-tooltip-label"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     HERO
+═══════════════════════════════ -->
+<header class="hero">
+  <h1>Hyttene på Siljeholmen</h1>
+  <p class="subtitle">Vårt hytteparadis på Hvaler</p>
+</header>
+
+<section class="intro-section">
+  <p>
+    Siljeholmen er et unikt og sjarmerende hyttested med lange tradisjoner og sterk tilknytning til naturen. For mange er holmen et ekte sommerparadis – et sted for bading, båtliv, gode naboskap og de enkle gledene ved hyttelivet. Hyttene er ulike i størrelse og stil, men sammen utgjør de et helt spesielt miljø som gjør Siljeholmen til noe for seg selv. Klikk på 📍 for å se hytten på kartet.
+  </p>
+</section>
+
+<div class="section-header">
+  <h2>Hyttene</h2>
+  <div class="divider"></div>
+</div>
+
+<main class="cabins-grid">
+
+  <!-- ══ HYTTE 1 ══ -->
+  <article class="cabin-card" id="hytte-1">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="1" data-slot="1" alt="Hytte 1" /></div>
+      <div class="img-square"><img src="https://i.ibb.co/v4MTDwMg/SIljeholmen-1-eiere.jpg" data-cabin="1" data-slot="2" alt="Eiere hytte 1" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 1</div>
+      <h3 class="cabin-name">Hytte 1 - Chalet Au Mer</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(1,'Rode Midt')">📍 Rode Midt</span>
+        <span class="tag tag-residents">👤 Merethe Rennemo &amp; Audun Smørgrav</span>
+      </div>
+      <p class="cabin-desc">Hytta er bygget på slutten av 1950-tallet og ble kjøpt av Merethe og Audun våren 2021. Hytta har blitt betydelig oppgradert i perioden 2021–2026.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 2 ══ -->
+  <article class="cabin-card" id="hytte-2">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/4ZjtbYT5/Siljeholmen-2.jpg" data-cabin="2" data-slot="1" alt="Hytte 2" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="2" data-slot="2" alt="Eiere hytte 2" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 2</div>
+      <h3 class="cabin-name">Hytte 2</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(2,'Rode Vest')">📍 Rode Vest</span>
+        <span class="tag tag-residents">👤 Asgeir Kvam &amp; Erik Kvam</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 3 ══ -->
+  <article class="cabin-card" id="hytte-3">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/HppBJq4C/Siljeholmen-3.jpg" data-cabin="3" data-slot="1" alt="Hytte 3" /></div>
+      <div class="img-square"><img src="https://i.ibb.co/wNxVy8dk/Siljeholmen-3-eier.jpg" data-cabin="3" data-slot="2" alt="Eiere hytte 3" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 3</div>
+      <h3 class="cabin-name">Hytte 3</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(3,'Rode Midt')">📍 Rode Midt</span>
+        <span class="tag tag-residents">👤 Bente Ukkestad</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 4 ══ -->
+  <article class="cabin-card" id="hytte-4">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/kg4PTHWR/Siljeholmen-4-Katthult.jpg" data-cabin="4" data-slot="1" alt="Hytte 4" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="4" data-slot="2" alt="Eiere hytte 4" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 4</div>
+      <h3 class="cabin-name">Hytte 4 - Katthult</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(4,'Rode Vest')">📍 Rode Vest</span>
+        <span class="tag tag-residents">👤 Dag Thomas Feldt &amp; Tom A. Larsen</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 5 ══ -->
+  <article class="cabin-card" id="hytte-5">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/xq2WjC66/Siljeholmen-5.jpg" data-cabin="5" data-slot="1" alt="Hytte 5" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="5" data-slot="2" alt="Eiere hytte 5" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 5</div>
+      <h3 class="cabin-name">Hytte 5</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(5,'Rode Midt')">📍 Rode Midt</span>
+        <span class="tag tag-residents">👤 Rune Jahren</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 6 ══ -->
+  <article class="cabin-card" id="hytte-6">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/cXKXY9gm/Siljeholmen-6.jpg" data-cabin="6" data-slot="1" alt="Hytte 6" /></div>
+      <div class="img-square"><img src="https://i.ibb.co/LdppLMpN/Silkjeholmen-6-eier.jpg" data-cabin="6" data-slot="2" alt="Eiere hytte 6" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 6</div>
+      <h3 class="cabin-name">Hytte 6</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(6,'Rode Vest')">📍 Rode Vest</span>
+        <span class="tag tag-residents">👤 Torunn Fernsjø Rennemo &amp; Kjell Rennemo</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 9 ══ -->
+  <article class="cabin-card" id="hytte-9">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/JF2x2F4W/Siljeholmen-9.jpg" data-cabin="9" data-slot="1" alt="Hytte 9" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="9" data-slot="2" alt="Eiere hytte 9" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 9</div>
+      <h3 class="cabin-name">Hytte 9</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(9,'Rode Midt')">📍 Rode Midt</span>
+        <span class="tag tag-residents">👤 Henrik &amp; Marlene Sæther</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 11 ══ -->
+  <article class="cabin-card" id="hytte-11">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/NdqD326r/Siljeholmen-11.jpg" data-cabin="11" data-slot="1" alt="Hytte 11" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="11" data-slot="2" alt="Eiere hytte 11" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 11</div>
+      <h3 class="cabin-name">Hytte 11</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(11,'Rode Midt')">📍 Rode Midt</span>
+        <span class="tag tag-residents">👤 Eyvind Elstad &amp; Marianne Fiskaa</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 13 ══ -->
+  <article class="cabin-card" id="hytte-13">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/39pbL1b8/Siljeholmen-13.jpg" data-cabin="13" data-slot="1" alt="Hytte 13" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="13" data-slot="2" alt="Eiere hytte 13" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 13</div>
+      <h3 class="cabin-name">Hytte 13</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(13,'Rode Midt')">📍 Rode Midt</span>
+        <span class="tag tag-residents">👤 Svein Erik Vrålstad</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 14 ══ -->
+  <article class="cabin-card" id="hytte-14">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/21XTPyPq/Siljeholmen-14.jpg" data-cabin="14" data-slot="1" alt="Hytte 14" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="14" data-slot="2" alt="Eiere hytte 14" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 14</div>
+      <h3 class="cabin-name">Hytte 14</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(14,'Rode Vest')">📍 Rode Vest</span>
+        <span class="tag tag-residents">👤 Lars Gunnar Andersen</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 15 ══ -->
+  <article class="cabin-card" id="hytte-15">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/yBGvyYWZ/Siljeholmen-15.jpg" data-cabin="15" data-slot="1" alt="Hytte 15" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="15" data-slot="2" alt="Eiere hytte 15" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 15</div>
+      <h3 class="cabin-name">Hytte 15</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(15,'Rode Øst')">📍 Rode Øst</span>
+        <span class="tag tag-residents">👤 Nina Cathrine Stenersen</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 16 ══ -->
+  <article class="cabin-card" id="hytte-16">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="16" data-slot="1" alt="Hytte 16" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="16" data-slot="2" alt="Eiere hytte 16" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 16</div>
+      <h3 class="cabin-name">Hytte 16</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(16,'Rode Vest')">📍 Rode Vest</span>
+        <span class="tag tag-residents">👤 Erik Sørbønsveen</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 18 ══ -->
+  <article class="cabin-card" id="hytte-18">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="18" data-slot="1" alt="Hytte 18" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="18" data-slot="2" alt="Eiere hytte 18" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 18</div>
+      <h3 class="cabin-name">Hytte 18</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(18,'Rode Vest')">📍 Rode Vest</span>
+        <span class="tag tag-residents">👤 Inger J. Jensen &amp; Per Cato Jensen</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 20 ══ -->
+  <article class="cabin-card" id="hytte-20">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/rKJSWhzz/Siljeholmen-20.jpg" data-cabin="20" data-slot="1" alt="Hytte 20" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="20" data-slot="2" alt="Eiere hytte 20" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 20</div>
+      <h3 class="cabin-name">Hytte 20</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(20,'Rode Vest')">📍 Rode Vest</span>
+        <span class="tag tag-residents">👤 Morten Engebretsen</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 21 SYD ══ -->
+  <article class="cabin-card" id="hytte-21-Syd">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="21-Syd" data-slot="1" alt="Hytte 21 Syd" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="21" data-slot="2" alt="Eiere hytte 21" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 21 Syd</div>
+      <h3 class="cabin-name">Hytte 21 Syd</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(21,'Rode Vest')">📍 Rode Vest</span>
+        <span class="tag tag-residents">👤 Steinar Holmen &amp; Bente Christin Eriksen</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 21 NORD ══ -->
+  <article class="cabin-card" id="hytte-21-Nord">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/ymbhRV8b/Siljeholmen-21-Nord.jpg" data-cabin="21-Nord" data-slot="1" alt="Hytte 21 Nord" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="21" data-slot="2" alt="Eiere hytte 21" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 21 Nord</div>
+      <h3 class="cabin-name">Hytte 21 Nord</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(21,'Rode Vest')">📍 Rode Vest</span>
+        <span class="tag tag-residents">👤 Gerd og Helge Eriksen</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 25 ══ -->
+  <article class="cabin-card" id="hytte-25">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/PZzMKYZq/Siljeholmen-25.jpg" data-cabin="25" data-slot="1" alt="Hytte 25" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="25" data-slot="2" alt="Eiere hytte 25" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 25</div>
+      <h3 class="cabin-name">Hytte 25</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(25,'Rode Vest')">📍 Rode Vest</span>
+        <span class="tag tag-residents">👤 Tore Korterud</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 26 ══ -->
+  <article class="cabin-card" id="hytte-26">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/gZXfVkrz/Siljeholmen-26.jpg" data-cabin="26" data-slot="1" alt="Hytte 26" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="26" data-slot="2" alt="Eiere hytte 26" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 26</div>
+      <h3 class="cabin-name">Hytte 26</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(26,'Rode Vest')">📍 Rode Vest</span>
+        <span class="tag tag-residents">👤 Mikkel S. Snarud</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 28 ══ -->
+  <article class="cabin-card" id="hytte-28">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/cKRDN9LG/Siljeholmen-28.jpg" data-cabin="28" data-slot="1" alt="Hytte 28" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="28" data-slot="2" alt="Eiere hytte 28" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 28</div>
+      <h3 class="cabin-name">Hytte 28</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(28,'Rode Vest')">📍 Rode Vest</span>
+        <span class="tag tag-residents">👤 Kristoffer Jørgensen</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 29 ══ -->
+  <article class="cabin-card" id="hytte-29">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/G4CnRjGg/Siljeholmen-29.jpg" data-cabin="29" data-slot="1" alt="Hytte 29" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="29" data-slot="2" alt="Eiere hytte 29" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 29</div>
+      <h3 class="cabin-name">Hytte 29</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(29,'Rode Vest')">📍 Rode Vest</span>
+        <span class="tag tag-residents">👤 Bente og Erland Solberg</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 33 ══ -->
+  <article class="cabin-card" id="hytte-33">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/YTkxv3vs/Siljeholmen-33.jpg" data-cabin="33" data-slot="1" alt="Hytte 33" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="33" data-slot="2" alt="Eiere hytte 33" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 33</div>
+      <h3 class="cabin-name">Hytte 33</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(33,'Rode Vest')">📍 Rode Vest</span>
+        <span class="tag tag-residents">👤 Bent Hammer</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 35 ══ -->
+  <article class="cabin-card" id="hytte-35">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/4nrFG2Kc/Siljeholmen-35.jpg" data-cabin="35" data-slot="1" alt="Hytte 35" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="35" data-slot="2" alt="Eiere hytte 35" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 35</div>
+      <h3 class="cabin-name">Hytte 35</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(35,'Rode Nord')">📍 Rode Nord</span>
+        <span class="tag tag-residents">👤 Frode og Berit Olsen</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 37 ══ -->
+  <article class="cabin-card" id="hytte-37">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/spN5nXL7/Siljeholmen-37.jpg" data-cabin="37" data-slot="1" alt="Hytte 37" /></div>
+      <div class="img-square"><img src="https://i.ibb.co/zVS38vmf/SIljeholmen-eiere-37-hytte.jpg" data-cabin="37" data-slot="2" alt="Eiere hytte 37" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 37</div>
+      <h3 class="cabin-name">Hytte 37</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(37,'Rode Nord')">📍 Rode Nord</span>
+        <span class="tag tag-residents">👤 Jon Ivar &amp; Lise Fjeldstad</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 39 ══ -->
+  <article class="cabin-card" id="hytte-39">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/Qvd5ZQwR/Siljeholmen-39.jpg" data-cabin="39" data-slot="1" alt="Hytte 39" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="39" data-slot="2" alt="Eiere hytte 39" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 39</div>
+      <h3 class="cabin-name">Hytte 39</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(39,'Rode Vest')">📍 Rode Vest</span>
+        <span class="tag tag-residents">👤 Øystein Fossen</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 41 ══ -->
+  <article class="cabin-card" id="hytte-41">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/FLMy6p0v/Siljeholmen-41.jpg" data-cabin="41" data-slot="1" alt="Hytte 41" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="41" data-slot="2" alt="Eiere hytte 41" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 41</div>
+      <h3 class="cabin-name">Hytte 41</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(41,'Rode Vest')">📍 Rode Vest</span>
+        <span class="tag tag-residents">👤 Geir Florholmen</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 43 ══ -->
+  <article class="cabin-card" id="hytte-43">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Hytte+43" data-cabin="43" data-slot="1" alt="Hytte 43" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="43" data-slot="2" alt="Eiere hytte 43" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 43</div>
+      <h3 class="cabin-name">Hytte 43</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(43,'Rode Nord')">📍 Rode Nord</span>
+        <span class="tag tag-residents">👤 Miriam Vestin</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 45 ══ -->
+  <article class="cabin-card" id="hytte-45">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/B25rM1d3/Siljeholmen-45.jpg" data-cabin="45" data-slot="1" alt="Hytte 45" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="45" data-slot="2" alt="Eiere hytte 45" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 45</div>
+      <h3 class="cabin-name">Hytte 45</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(45,'Rode Nord')">📍 Rode Nord</span>
+        <span class="tag tag-residents">👤 Roger Karlsen</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 47 ══ -->
+  <article class="cabin-card" id="hytte-47">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/fVfb425N/Siljeholmen-47.jpg" data-cabin="47" data-slot="1" alt="Hytte 47" /></div>
+      <div class="img-square"><img src="https://i.ibb.co/0pcQbBww/47-eier.jpg" data-cabin="47" data-slot="2" alt="Eiere hytte 47" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 47</div>
+      <h3 class="cabin-name">Hytte 47</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(47,'Rode Nord')">📍 Rode Nord</span>
+        <span class="tag tag-residents">👤 Geir Atle, Embret, Ann, Lise, Ylva Othilie &amp; Jon Petter Sandem</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 48 ══ -->
+  <article class="cabin-card" id="hytte-48">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/BVZGqSGW/Siljeholmen-48.jpg" data-cabin="48" data-slot="1" alt="Hytte 48" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="48" data-slot="2" alt="Eiere hytte 48" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 48</div>
+      <h3 class="cabin-name">Hytte 48</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(48,'Rode Nord')">📍 Rode Nord</span>
+        <span class="tag tag-residents">👤 Astri Torp Gudim</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 51 ══ -->
+  <article class="cabin-card" id="hytte-51">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/WNBZKSy3/Siljeholmen-51.jpg" data-cabin="51" data-slot="1" alt="Hytte 51" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="51" data-slot="2" alt="Eiere hytte 51" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 51</div>
+      <h3 class="cabin-name">Hytte 51</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(51,'Rode Nord')">📍 Rode Nord</span>
+        <span class="tag tag-residents">👤 Martin Sørlie-Nielsen &amp; Britt Hellèn Holt-Jensen</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 53 ══ -->
+  <article class="cabin-card" id="hytte-53">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="53" data-slot="1" alt="Hytte 53" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="53" data-slot="2" alt="Eiere hytte 53" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 53</div>
+      <h3 class="cabin-name">Hytte 53</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(53,'Rode Nord')">📍 Rode Nord</span>
+        <span class="tag tag-residents">👤 Mette Mork Møller</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 54 ══ -->
+  <article class="cabin-card" id="hytte-54">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/W4kKXZ72/Siljeholmen-54.jpg" data-cabin="54" data-slot="1" alt="Hytte 54" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="54" data-slot="2" alt="Eiere hytte 54" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 54</div>
+      <h3 class="cabin-name">Hytte 54</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(54,'Rode Nord')">📍 Rode Nord</span>
+        <span class="tag tag-residents">👤 Tommy Ødegård</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 56 ══ -->
+  <article class="cabin-card" id="hytte-56">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/JRCpj7SV/Siljeholmen-56.jpg" data-cabin="56" data-slot="1" alt="Hytte 56" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="56" data-slot="2" alt="Eiere hytte 56" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 56</div>
+      <h3 class="cabin-name">Hytte 56</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(56,'Rode Nord')">📍 Rode Nord</span>
+        <span class="tag tag-residents">👤 Inger Kristiansen &amp; Jon Andre Kristiansen</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 59 ══ -->
+  <article class="cabin-card" id="hytte-59">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/nqF0KcT0/Siljeholmen-59.jpg" data-cabin="59" data-slot="1" alt="Hytte 59" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="59" data-slot="2" alt="Eiere hytte 59" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 59</div>
+      <h3 class="cabin-name">Hytte 59</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(59,'Rode Nord')">📍 Rode Nord</span>
+        <span class="tag tag-residents">👤 Jan Ingar Dahlberg</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 61 ══ -->
+  <article class="cabin-card" id="hytte-61">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="61" data-slot="1" alt="Hytte 61" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="61" data-slot="2" alt="Eiere hytte 61" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 61</div>
+      <h3 class="cabin-name">Hytte 61</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(61,'Rode Nord')">📍 Rode Nord</span>
+        <span class="tag tag-residents">👤 Jan Oscar Svae</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 63 ══ -->
+  <article class="cabin-card" id="hytte-63">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/yByTCjBZ/Siljeholmen-63.jpg" data-cabin="63" data-slot="1" alt="Hytte 63" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="63" data-slot="2" alt="Eiere hytte 63" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 63</div>
+      <h3 class="cabin-name">Hytte 63</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(63,'Rode Nord')">📍 Rode Nord</span>
+        <span class="tag tag-residents">👤 Vicki Tettum</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 69 ══ -->
+  <article class="cabin-card" id="hytte-69">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/S7MddSph/Siljeholmen-69.jpg" data-cabin="69" data-slot="1" alt="Hytte 69" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="69" data-slot="2" alt="Eiere hytte 69" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 69</div>
+      <h3 class="cabin-name">Hytte 69</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(69,'Rode Nord')">📍 Rode Nord</span>
+        <span class="tag tag-residents">👤 Lise Aaserud</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 74 ══ -->
+  <article class="cabin-card" id="hytte-74">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Hytte+74" data-cabin="74" data-slot="1" alt="Hytte 74" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="74" data-slot="2" alt="Eiere hytte 74" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 74</div>
+      <h3 class="cabin-name">Hytte 74</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(74,'Rode Øst')">📍 Rode Øst</span>
+        <span class="tag tag-residents">👤 Elin og Håvard Schie</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 76 ══ -->
+  <article class="cabin-card" id="hytte-76">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/1GJpC6fb/Siljeholmen-76.jpg" data-cabin="76" data-slot="1" alt="Hytte 76" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="76" data-slot="2" alt="Eiere hytte 76" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 76</div>
+      <h3 class="cabin-name">Hytte 76</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(76,'Rode Øst')">📍 Rode Øst</span>
+        <span class="tag tag-residents">👤 Heidi M. Ween</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 78 ══ -->
+  <article class="cabin-card" id="hytte-78">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/qM06BrFX/Siljeholmen-78.jpg" data-cabin="78" data-slot="1" alt="Hytte 78" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="78" data-slot="2" alt="Eiere hytte 78" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 78</div>
+      <h3 class="cabin-name">Hytte 78</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(78,'Rode Øst')">📍 Rode Øst</span>
+        <span class="tag tag-residents">👤 Ann Charlotte Christensen</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 79 ══ -->
+  <article class="cabin-card" id="hytte-79">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/h1RhVMHm/Siljeholmen-79.jpg" data-cabin="79" data-slot="1" alt="Hytte 79" /></div>
+      <div class="img-square"><img src="https://i.ibb.co/0pV70mLB/79-eier.jpg" data-cabin="79" data-slot="2" alt="Eiere hytte 79" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 79</div>
+      <h3 class="cabin-name">Hytte 79</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(79,'Rode Øst')">📍 Rode Øst</span>
+        <span class="tag tag-residents">👤 Nina og Petter Skår Johansen</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 80 ══ -->
+  <article class="cabin-card" id="hytte-80">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/qYJPrDTY/Siljeholmen-80.jpg" data-cabin="80" data-slot="1" alt="Hytte 80" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="80" data-slot="2" alt="Eiere hytte 80" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 80</div>
+      <h3 class="cabin-name">Hytte 80</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(80,'Rode Øst')">📍 Rode Øst</span>
+        <span class="tag tag-residents">👤 Tor Jan Idland &amp; Tone Idland</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 82 ══ -->
+  <article class="cabin-card" id="hytte-82">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/Vpg8y70D/Siljeholmen-82.jpg" data-cabin="82" data-slot="1" alt="Hytte 82" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="82" data-slot="2" alt="Eiere hytte 82" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 82</div>
+      <h3 class="cabin-name">Hytte 82</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(82,'Rode Øst')">📍 Rode Øst</span>
+        <span class="tag tag-residents">👤 Alfred Skaiaa &amp; Marit Elise Skaiaa</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 84 ══ -->
+  <article class="cabin-card" id="hytte-84">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/0j3Mx1TN/Siljeholmen-84.jpg" data-cabin="84" data-slot="1" alt="Hytte 84" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="84" data-slot="2" alt="Eiere hytte 84" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 84</div>
+      <h3 class="cabin-name">Hytte 84</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(84,'Rode Øst')">📍 Rode Øst</span>
+        <span class="tag tag-residents">👤 Bjørn Villi Johansen</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 86 ══ -->
+  <article class="cabin-card" id="hytte-86">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/RG7FwnxJ/Siljeholmen-86.jpg" data-cabin="86" data-slot="1" alt="Hytte 86" /></div>
+      <div class="img-square"><img src="https://i.ibb.co/Y4s6Mvyj/Siljeholmen-86-eier.jpg" data-cabin="86" data-slot="2" alt="Eiere hytte 86" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 86</div>
+      <h3 class="cabin-name">Hytte 86</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(86,'Rode Øst')">📍 Rode Øst</span>
+        <span class="tag tag-residents">👤 Ane Thurid Brudi</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 88 ══ -->
+  <article class="cabin-card" id="hytte-88">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/0pKxBmtF/Siljeholmen-88.jpg" data-cabin="88" data-slot="1" alt="Hytte 88" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="88" data-slot="2" alt="Eiere hytte 88" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 88</div>
+      <h3 class="cabin-name">Hytte 88</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(88,'Rode Øst')">📍 Rode Øst</span>
+        <span class="tag tag-residents">👤 Tor H. Eikeland</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 90 ══ -->
+  <article class="cabin-card" id="hytte-90">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/ds3h6dk7/Siljeholmen-90.jpg" data-cabin="90" data-slot="1" alt="Hytte 90" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="90" data-slot="2" alt="Eiere hytte 90" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 90</div>
+      <h3 class="cabin-name">Hytte 90</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(90,'Rode Øst')">📍 Rode Øst</span>
+        <span class="tag tag-residents">👤 Bent Ove Bekkerud</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 92 ══ -->
+  <article class="cabin-card" id="hytte-92">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/1Gkvmjyy/Siljeholmen-92.jpg" data-cabin="92" data-slot="1" alt="Hytte 92" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="92" data-slot="2" alt="Eiere hytte 92" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 92</div>
+      <h3 class="cabin-name">Hytte 92</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(92,'Rode Øst')">📍 Rode Øst</span>
+        <span class="tag tag-residents">👤 Bjørn Freddy Bekkerud</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 93 ══ -->
+  <article class="cabin-card" id="hytte-93">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/G4yvTgnf/Siljeholmen-93.jpg" data-cabin="93" data-slot="1" alt="Hytte 93" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="93" data-slot="2" alt="Eiere hytte 93" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 93</div>
+      <h3 class="cabin-name">Hytte 93</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(93,'Rode Øst')">📍 Rode Øst</span>
+        <span class="tag tag-residents">👤 Kim Kiltveit</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 94 SYD ══ -->
+  <article class="cabin-card" id="hytte-94-syd">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/LhCB4M8D/Siljeholmen-94-Syd.jpg" data-cabin="94-syd" data-slot="1" alt="Hytte 94 syd" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="94" data-slot="2" alt="Eiere hytte 94" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 94 Syd</div>
+      <h3 class="cabin-name">Hytte 94 Syd</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(94,'Rode Øst')">📍 Rode Øst</span>
+        <span class="tag tag-residents">👤 Øivind Mikalsen</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 94 NORD ══ -->
+  <article class="cabin-card" id="hytte-94-nord">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Hytte+94" data-cabin="94-nord" data-slot="1" alt="Hytte 94 nord" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="94" data-slot="2" alt="Eiere hytte 94" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 94 Nord</div>
+      <h3 class="cabin-name">Hytte 94 Nord</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(94,'Rode Øst')">📍 Rode Øst</span>
+        <span class="tag tag-residents">👤 Øivind Mikalsen</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 95 ══ -->
+  <article class="cabin-card" id="hytte-95">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/CpHjMPyv/Siljeholmen-95.jpg" data-cabin="95" data-slot="1" alt="Hytte 95" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="95" data-slot="2" alt="Eiere hytte 95" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 95</div>
+      <h3 class="cabin-name">Hytte 95</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(95,'Rode Midt')">📍 Rode Midt</span>
+        <span class="tag tag-residents">👤 Jan Roger Berg</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 96 ══ -->
+  <article class="cabin-card" id="hytte-96">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/JwG883ZX/Siljeholmen-96.jpg" data-cabin="96" data-slot="1" alt="Hytte 96" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="96" data-slot="2" alt="Eiere hytte 96" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 96</div>
+      <h3 class="cabin-name">Hytte 96</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(96,'Rode Øst')">📍 Rode Øst</span>
+        <span class="tag tag-residents">👤 Arnt Helge Høyem</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 97 ══ -->
+  <article class="cabin-card" id="hytte-97">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/DD1kcf2q/Siljeholmen-97.jpg" data-cabin="97" data-slot="1" alt="Hytte 97" /></div>
+      <div class="img-square"><img src="https://i.ibb.co/YThSFChG/Siljeholmen-97-eier.jpg" data-cabin="97" data-slot="2" alt="Eiere hytte 97" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 97</div>
+      <h3 class="cabin-name">Hytte 97 - Lillehuset</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(97,'Rode Øst')">📍 Rode Øst</span>
+        <span class="tag tag-residents">👤 Birgit Eriksen</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 98 ══ -->
+  <article class="cabin-card" id="hytte-98">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/7d9DDmHJ/Siljeholmen-98.jpg" data-cabin="98" data-slot="1" alt="Hytte 98" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="98" data-slot="2" alt="Eiere hytte 98" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 98</div>
+      <h3 class="cabin-name">Hytte 98</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(98,'Rode Øst')">📍 Rode Øst</span>
+        <span class="tag tag-residents">👤 Grethe Berg Svendsen</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 100 ══ -->
+  <article class="cabin-card" id="hytte-100">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/6c3pMBgm/Siljeholmen-100.jpg" data-cabin="100" data-slot="1" alt="Hytte 100" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="100" data-slot="2" alt="Eiere hytte 100" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 100</div>
+      <h3 class="cabin-name">Hytte 100</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(100,'Rode Øst')">📍 Rode Øst</span>
+        <span class="tag tag-residents">👤 Birgit Linde Reinertsen</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 101 ══ -->
+  <article class="cabin-card" id="hytte-101">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/k2YQQMmN/Siljeholmen-101.jpg" data-cabin="101" data-slot="1" alt="Hytte 101" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="101" data-slot="2" alt="Eiere hytte 101" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 101</div>
+      <h3 class="cabin-name">Hytte 101</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(101,'Rode Øst')">📍 Rode Øst</span>
+        <span class="tag tag-residents">👤 Pål Jensen</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 102 ══ -->
+  <article class="cabin-card" id="hytte-102">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/7xNwhJXc/Siljeholmen-102.jpg" data-cabin="102" data-slot="1" alt="Hytte 102" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="102" data-slot="2" alt="Eiere hytte 102" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 102</div>
+      <h3 class="cabin-name">Hytte 102</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(102,'Rode Øst')">📍 Rode Øst</span>
+        <span class="tag tag-residents">👤 Ann-Chatrin Linqvist Leonardsen</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 108 ══ -->
+  <article class="cabin-card" id="hytte-108">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/chY5J22c/Siljeholmen-108.jpg" data-cabin="108" data-slot="1" alt="Hytte 108" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="108" data-slot="2" alt="Eiere hytte 108" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 108</div>
+      <h3 class="cabin-name">Hytte 108</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(108,'Rode Midt')">📍 Rode Midt</span>
+        <span class="tag tag-residents">👤 Hilde M. Ronheim &amp; Finn-Erik Jensen</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 109 ══ -->
+  <article class="cabin-card" id="hytte-109">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/KxMs0yTQ/Siljeholmen-109.jpg" data-cabin="109" data-slot="1" alt="Hytte 109" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="109" data-slot="2" alt="Eiere hytte 109" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 109</div>
+      <h3 class="cabin-name">Hytte 109</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(109,'Rode Midt')">📍 Rode Midt</span>
+        <span class="tag tag-residents">👤 Tor Erik Brien</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 111 ══ -->
+  <article class="cabin-card" id="hytte-111">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/C50zB75k/Siljeholmen-111.jpg" data-cabin="111" data-slot="1" alt="Hytte 111" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="111" data-slot="2" alt="Eiere hytte 111" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 111</div>
+      <h3 class="cabin-name">Hytte 111 - Toppen</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(111,'Rode Midt')">📍 Rode Midt</span>
+        <span class="tag tag-residents">👤 Arne Kildal</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 112 ══ -->
+  <article class="cabin-card" id="hytte-112">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/n8kWCx4Y/Siljeholmen-112.jpg" data-cabin="112" data-slot="1" alt="Hytte 112" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="112" data-slot="2" alt="Eiere hytte 112" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 112</div>
+      <h3 class="cabin-name">Hytte 112</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(112,'Rode Midt')">📍 Rode Midt</span>
+        <span class="tag tag-residents">👤 Marit W. Teigen</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 202 ══ -->
+  <article class="cabin-card" id="hytte-202">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/RGvf7NXG/Siljeholmen-202.jpg" data-cabin="202" data-slot="1" alt="Hytte 202" /></div>
+      <div class="img-square"><img src="https://i.ibb.co/bgSgvKFy/Siljeholmen-202-eier.jpg" data-cabin="202" data-slot="2" alt="Eiere hytte 202" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 202</div>
+      <h3 class="cabin-name">Hytte 202</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(202,'Rode Midt')">📍 Rode Midt</span>
+        <span class="tag tag-residents">👤 Lise &amp; Steinar Knutsen</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 205 ══ -->
+  <article class="cabin-card" id="hytte-205">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Hytte+205" data-cabin="205" data-slot="1" alt="Hytte 205" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="205" data-slot="2" alt="Eiere hytte 205" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 205</div>
+      <h3 class="cabin-name">Hytte 205 - Ruffen</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(205,'Rode Midt')">📍 Rode Midt</span>
+        <span class="tag tag-residents">👤 Pål Aanerud</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 206 ══ -->
+  <article class="cabin-card" id="hytte-206">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Hytte+206" data-cabin="206" data-slot="1" alt="Hytte 206" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="206" data-slot="2" alt="Eiere hytte 206" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 206</div>
+      <h3 class="cabin-name">Hytte 206</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(206,'Rode Midt')">📍 Rode Midt</span>
+        <span class="tag tag-residents">👤 Odd Steinar Hagen</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 208 ══ -->
+  <article class="cabin-card" id="hytte-208">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Hytte+208" data-cabin="208" data-slot="1" alt="Hytte 208" /></div>
+      <div class="img-square"><img src="https://i.ibb.co/Y7PB7zjY/SIljeholmen-eiere-208.jpg" data-cabin="208" data-slot="2" alt="Eiere hytte 208" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 208</div>
+      <h3 class="cabin-name">Hytte 208</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(208,'Rode Midt')">📍 Rode Midt</span>
+        <span class="tag tag-residents">👤 Rune Olsen</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 210 ══ -->
+  <article class="cabin-card" id="hytte-210">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/1G13yj33/Siljeholmen-210.jpg" data-cabin="210" data-slot="1" alt="Hytte 210" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="210" data-slot="2" alt="Eiere hytte 210" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 210</div>
+      <h3 class="cabin-name">Hytte 210</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(210,'Rode Syd-Øst')">📍 Rode Syd-Øst</span>
+        <span class="tag tag-residents">👤 Carl Erik Larsen</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 211 ══ -->
+  <article class="cabin-card" id="hytte-211">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="211" data-slot="1" alt="Hytte 211" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="211" data-slot="2" alt="Eiere hytte 211" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 211</div>
+      <h3 class="cabin-name">Hytte 211</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(211,'Rode Syd-Vest')">📍 Rode Syd-Vest</span>
+        <span class="tag tag-residents">👤 Lise Haugen &amp; Tomas Jacobsson</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 212 ══ -->
+  <article class="cabin-card" id="hytte-212">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/S7ZRhFSS/Siljeholmen-212.jpg" data-cabin="212" data-slot="1" alt="Hytte 212" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="212" data-slot="2" alt="Eiere hytte 212" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 212</div>
+      <h3 class="cabin-name">Hytte 212</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(212,'Rode Syd-Øst')">📍 Rode Syd-Øst</span>
+        <span class="tag tag-residents">👤 Birgitte &amp; Trond Øyvind Karterud</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 213 ══ -->
+  <article class="cabin-card" id="hytte-213">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="213" data-slot="1" alt="Hytte 213" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="213" data-slot="2" alt="Eiere hytte 213" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 213</div>
+      <h3 class="cabin-name">Hytte 213</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(213,'Rode Syd-Vest')">📍 Rode Syd-Vest</span>
+        <span class="tag tag-residents">👤 Kai Ove Andreassen &amp; Vibeke Bringsli Lindquist</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 215 ══ -->
+  <article class="cabin-card" id="hytte-215">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="215" data-slot="1" alt="Hytte 215" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="215" data-slot="2" alt="Eiere hytte 215" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 215</div>
+      <h3 class="cabin-name">Hytte 215</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(215,'Rode Syd-Vest')">📍 Rode Syd-Vest</span>
+        <span class="tag tag-residents">👤 Glenn &amp; Terje Haglund</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 217 ══ -->
+  <article class="cabin-card" id="hytte-217">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/wFdCgbxf/Siljeholmen-217.jpg" data-cabin="217" data-slot="1" alt="Hytte 217" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="217" data-slot="2" alt="Eiere hytte 217" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 217</div>
+      <h3 class="cabin-name">Hytte 217</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(217,'Rode Syd-Øst')">📍 Rode Syd-Øst</span>
+        <span class="tag tag-residents">👤 Pål E. Simensen &amp; Kristin Simensen</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 220 ══ -->
+  <article class="cabin-card" id="hytte-220">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Hytte+220" data-cabin="220" data-slot="1" alt="Hytte 220" /></div>
+      <div class="img-square"><img src="https://i.ibb.co/yFmdvXRS/Siljeholmen-220-eier.jpg" data-cabin="220" data-slot="2" alt="Eiere hytte 220" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 220</div>
+      <h3 class="cabin-name">Hytte 220</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(220,'Rode Syd-Øst')">📍 Rode Syd-Øst</span>
+        <span class="tag tag-residents">👤 Unn Helle &amp; Frank Lønberg</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 221 ══ -->
+  <article class="cabin-card" id="hytte-221">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="221" data-slot="1" alt="Hytte 221" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="221" data-slot="2" alt="Eiere hytte 221" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 221</div>
+      <h3 class="cabin-name">Hytte 221</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(221,'Rode Syd-Øst')">📍 Rode Syd-Øst</span>
+        <span class="tag tag-residents">👤 Vidar Foslid</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 222 ══ -->
+  <article class="cabin-card" id="hytte-222">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/ynfYXs84/Siljeholmen-222.jpg" data-cabin="222" data-slot="1" alt="Hytte 222" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="222" data-slot="2" alt="Eiere hytte 222" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 222</div>
+      <h3 class="cabin-name">Hytte 222</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(222,'Rode Syd-Øst')">📍 Rode Syd-Øst</span>
+        <span class="tag tag-residents">👤 Gunnar Bjar &amp; Heidi Asplin</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 223 ══ -->
+  <article class="cabin-card" id="hytte-223">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="223" data-slot="1" alt="Hytte 223" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="223" data-slot="2" alt="Eiere hytte 223" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 223</div>
+      <h3 class="cabin-name">Hytte 223</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(223,'Rode Syd-Øst')">📍 Rode Syd-Øst</span>
+        <span class="tag tag-residents">👤 Julie Jarre &amp; Pål Martin Skogshagen</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 224 ══ -->
+  <article class="cabin-card" id="hytte-224">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/bg6CjZd8/Siljeholmen-224.jpg" data-cabin="224" data-slot="1" alt="Hytte 224" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="224" data-slot="2" alt="Eiere hytte 224" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 224</div>
+      <h3 class="cabin-name">Hytte 224</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(224,'Rode Syd-Øst')">📍 Rode Syd-Øst</span>
+        <span class="tag tag-residents">👤 Dag Pedersen</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 225 ══ -->
+  <article class="cabin-card" id="hytte-225">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="225" data-slot="1" alt="Hytte 225" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="225" data-slot="2" alt="Eiere hytte 225" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 225</div>
+      <h3 class="cabin-name">Hytte 225</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(225,'Rode Syd-Øst')">📍 Rode Syd-Øst</span>
+        <span class="tag tag-residents">👤 Tore Brockstedt</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 226 ══ -->
+  <article class="cabin-card" id="hytte-226">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/FLbs5qh7/Siljeholmen-226.jpg" data-cabin="226" data-slot="1" alt="Hytte 226" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="226" data-slot="2" alt="Eiere hytte 226" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 226</div>
+      <h3 class="cabin-name">Hytte 226</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(226,'Rode Syd-Øst')">📍 Rode Syd-Øst</span>
+        <span class="tag tag-residents">👤 Geir H. Berge</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 227 ══ -->
+  <article class="cabin-card" id="hytte-227">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/x81KLFM0/Siljeholmen-227.jpg" data-cabin="227" data-slot="1" alt="Hytte 227" /></div>
+      <div class="img-square"><img src="https://i.ibb.co/bMDFL6Vx/Siljeholmen-227-eier.jpg" data-cabin="227" data-slot="2" alt="Eiere hytte 227" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 227</div>
+      <h3 class="cabin-name">Hytte 227</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(227,'Rode Syd-Øst')">📍 Rode Syd-Øst</span>
+        <span class="tag tag-residents">👤 Hanne Inger Arvola &amp; Jan Ombudstvedt</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 228 ══ -->
+  <article class="cabin-card" id="hytte-228">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="228" data-slot="1" alt="Hytte 228" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="228" data-slot="2" alt="Eiere hytte 228" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 228</div>
+      <h3 class="cabin-name">Hytte 228</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(228,'Rode Syd-Øst')">📍 Rode Syd-Øst</span>
+        <span class="tag tag-residents">👤 Stian Larsen</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 232 ══ -->
+  <article class="cabin-card" id="hytte-232">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="232" data-slot="1" alt="Hytte 232" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="232" data-slot="2" alt="Eiere hytte 232" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 232</div>
+      <h3 class="cabin-name">Hytte 232</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(232,'Rode Syd-Øst')">📍 Rode Syd-Øst</span>
+        <span class="tag tag-residents">👤 Pål Tveten</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 234 ══ -->
+  <article class="cabin-card" id="hytte-234">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="234" data-slot="1" alt="Hytte 234" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="234" data-slot="2" alt="Eiere hytte 234" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 234</div>
+      <h3 class="cabin-name">Hytte 234</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(234,'Rode Syd-Øst')">📍 Rode Syd-Øst</span>
+        <span class="tag tag-residents">👤 Espen Landgraff</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 236 ══ -->
+  <article class="cabin-card" id="hytte-236">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/mrVLQ3mv/Siljeholmen-236.jpg" data-cabin="236" data-slot="1" alt="Hytte 236" /></div>
+      <div class="img-square"><img src="https://i.ibb.co/Xkf5ZzQz/Siljeholmen-236-eier.jpg" data-cabin="236" data-slot="2" alt="Eiere hytte 236" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 236</div>
+      <h3 class="cabin-name">Hytte 236</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(236,'Rode Syd-Øst')">📍 Rode Syd-Øst</span>
+        <span class="tag tag-residents">👤 Terje Bjerklund, May-Lisbeth Ahlsen Bjerklund, Hilde Johansen &amp; Lars-Ivar Johansen</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 238 ══ -->
+  <article class="cabin-card" id="hytte-238">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="238" data-slot="1" alt="Hytte 238" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="238" data-slot="2" alt="Eiere hytte 238" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 238</div>
+      <h3 class="cabin-name">Hytte 238</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(238,'Rode Syd-Øst')">📍 Rode Syd-Øst</span>
+        <span class="tag tag-residents">👤 Anita &amp; Helge Tveten</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 239 ══ -->
+  <article class="cabin-card" id="hytte-239">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/wZpkLwXB/Siljeholmen-239.jpg" data-cabin="239" data-slot="1" alt="Hytte 239" /></div>
+      <div class="img-square"><img src="https://i.ibb.co/Y7Qyf10z/Siljeholmen-239-eier-Lisemarit-Lars-J-rgen.jpg" data-cabin="239" data-slot="2" alt="Eiere hytte 239" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 239</div>
+      <h3 class="cabin-name">Hytte 239</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(239,'Rode Syd-Vest')">📍 Rode Syd-Vest</span>
+        <span class="tag tag-residents">👤 Lisemarit &amp; Lars-Jørgen Epland</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 240 ══ -->
+  <article class="cabin-card" id="hytte-240">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://i.ibb.co/HfFrtYq3/Siljeholmen-240.jpg" data-cabin="240" data-slot="1" alt="Hytte 240" /></div>
+      <div class="img-square"><img src="https://i.ibb.co/nqrSTfyg/Siljeholmen-240-eier.jpg" data-cabin="240" data-slot="2" alt="Eiere hytte 240" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 240</div>
+      <h3 class="cabin-name">Hytte 240</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(240,'Rode Syd-Vest')">📍 Rode Syd-Vest</span>
+        <span class="tag tag-residents">👤 Aase &amp; Finn-Jarle Lund Mathisen</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 242 ══ -->
+  <article class="cabin-card" id="hytte-242">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="242" data-slot="1" alt="Hytte 242" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="242" data-slot="2" alt="Eiere hytte 242" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 242</div>
+      <h3 class="cabin-name">Hytte 242</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(242,'Rode Syd-Vest')">📍 Rode Syd-Vest</span>
+        <span class="tag tag-residents">👤 Romar Halvorsen</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 244 ══ -->
+  <article class="cabin-card" id="hytte-244">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="244" data-slot="1" alt="Hytte 244" /></div>
+      <div class="img-square"><img src="https://i.ibb.co/ycGkchTh/Siljeholmen-244-eiere.jpg" data-cabin="244" data-slot="2" alt="Eiere hytte 244" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 244</div>
+      <h3 class="cabin-name">Hytte 244</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(244,'Rode Syd-Vest')">📍 Rode Syd-Vest</span>
+        <span class="tag tag-residents">👤 Hege &amp; Andre Pettersen Bjørvik</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 245 ══ -->
+  <article class="cabin-card" id="hytte-245">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="245" data-slot="1" alt="Hytte 245" /></div>
+      <div class="img-square"><img src="https://i.ibb.co/j9Kh5dnz/Siljeholmen-245-eier.jpg" data-cabin="245" data-slot="2" alt="Eiere hytte 245" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 245</div>
+      <h3 class="cabin-name">Hytte 245</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(245,'Rode Syd-Vest')">📍 Rode Syd-Vest</span>
+        <span class="tag tag-residents">👤 Inger Oulie</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 246 ══ -->
+  <article class="cabin-card" id="hytte-246">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="246" data-slot="1" alt="Hytte 246" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="246" data-slot="2" alt="Eiere hytte 246" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 246</div>
+      <h3 class="cabin-name">Hytte 246</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(246,'Rode Syd-Vest')">📍 Rode Syd-Vest</span>
+        <span class="tag tag-residents">👤 Cathrine Fiane &amp; Vibeke Mortensen Finstad</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 247 ══ -->
+  <article class="cabin-card" id="hytte-247">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="247" data-slot="1" alt="Hytte 247" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="247" data-slot="2" alt="Eiere hytte 247" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 247</div>
+      <h3 class="cabin-name">Hytte 247</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(247,'Rode Syd-Vest')">📍 Rode Syd-Vest</span>
+        <span class="tag tag-residents">👤 Roy &amp; Trude Høiås</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 248 ══ -->
+  <article class="cabin-card" id="hytte-248">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="248" data-slot="1" alt="Hytte 248" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="248" data-slot="2" alt="Eiere hytte 248" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 248</div>
+      <h3 class="cabin-name">Hytte 248</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(248,'Rode Syd-Vest')">📍 Rode Syd-Vest</span>
+        <span class="tag tag-residents">👤 Turid Dale</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 249 ══ -->
+  <article class="cabin-card" id="hytte-249">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="249" data-slot="1" alt="Hytte 249" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="249" data-slot="2" alt="Eiere hytte 249" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 249</div>
+      <h3 class="cabin-name">Hytte 249</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(249,'Rode Syd-Vest')">📍 Rode Syd-Vest</span>
+        <span class="tag tag-residents">👤 Tor-Willy Bjørk</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 250 ══ -->
+  <article class="cabin-card" id="hytte-250">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="250" data-slot="1" alt="Hytte 250" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="250" data-slot="2" alt="Eiere hytte 250" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 250</div>
+      <h3 class="cabin-name">Hytte 250</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(250,'Rode Syd-Vest')">📍 Rode Syd-Vest</span>
+        <span class="tag tag-residents">👤 Eli Volckmar</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 261 ══ -->
+  <article class="cabin-card" id="hytte-261">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="261" data-slot="1" alt="Hytte 261" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="261" data-slot="2" alt="Eiere hytte 261" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 261</div>
+      <h3 class="cabin-name">Hytte 261</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(261,'Rode Syd-Vest')">📍 Rode Syd-Vest</span>
+        <span class="tag tag-residents">👤 Truls Eidsvold</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+  <!-- ══ HYTTE 263 ══ -->
+  <article class="cabin-card" id="hytte-263">
+    <div class="cabin-images">
+      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="263" data-slot="1" alt="Hytte 263" /></div>
+      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="263" data-slot="2" alt="Eiere hytte 263" /></div>
+    </div>
+    <div class="cabin-body">
+      <div class="cabin-number">Siljeholmen 263</div>
+      <h3 class="cabin-name">Hytte 263</h3>
+      <div class="cabin-tags">
+        <span class="tag tag-location" onclick="showMap(263,'Rode Syd-Vest')">📍 Rode Syd-Vest</span>
+        <span class="tag tag-residents">👤 Anja Blegeberg</span>
+      </div>
+      <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
+    </div>
+  </article>
+
+</main>
+
+<footer>
+  <p>Siljeholmen Vel &nbsp;·&nbsp; Oppdatert juni 2025</p>
+</footer>
+
+<script>
+// ── BILDELENKER: endre bildeurl her, gjelder automatisk overalt ──
+const cabinData = {
+  "1": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://i.ibb.co/v4MTDwMg/SIljeholmen-1-eiere.jpg" },
+  "2": { img1: "https://i.ibb.co/4ZjtbYT5/Siljeholmen-2.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "3": { img1: "https://i.ibb.co/HppBJq4C/Siljeholmen-3.jpg", img2: "https://i.ibb.co/wNxVy8dk/Siljeholmen-3-eier.jpg" },
+  "4": { img1: "https://i.ibb.co/kg4PTHWR/Siljeholmen-4-Katthult.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "5": { img1: "https://i.ibb.co/xq2WjC66/Siljeholmen-5.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "6": { img1: "https://i.ibb.co/cXKXY9gm/Siljeholmen-6.jpg", img2: "https://i.ibb.co/LdppLMpN/Silkjeholmen-6-eier.jpg" },
+  "9": { img1: "https://i.ibb.co/JF2x2F4W/Siljeholmen-9.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "11": { img1: "https://i.ibb.co/NdqD326r/Siljeholmen-11.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "13": { img1: "https://i.ibb.co/39pbL1b8/Siljeholmen-13.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "14": { img1: "https://i.ibb.co/21XTPyPq/Siljeholmen-14.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "15": { img1: "https://i.ibb.co/yBGvyYWZ/Siljeholmen-15.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "16": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "18": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "20": { img1: "https://i.ibb.co/rKJSWhzz/Siljeholmen-20.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "21-Syd": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "21-Nord": { img1: "https://i.ibb.co/ymbhRV8b/Siljeholmen-21-Nord.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "25": { img1: "https://i.ibb.co/PZzMKYZq/Siljeholmen-25.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "26": { img1: "https://i.ibb.co/gZXfVkrz/Siljeholmen-26.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "28": { img1: "https://i.ibb.co/cKRDN9LG/Siljeholmen-28.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "29": { img1: "https://i.ibb.co/G4CnRjGg/Siljeholmen-29.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "33": { img1: "https://i.ibb.co/YTkxv3vs/Siljeholmen-33.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "35": { img1: "https://i.ibb.co/4nrFG2Kc/Siljeholmen-35.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "37": { img1: "https://i.ibb.co/spN5nXL7/Siljeholmen-37.jpg", img2: "https://i.ibb.co/zVS38vmf/SIljeholmen-eiere-37-hytte.jpg" },
+  "39": { img1: "https://i.ibb.co/Qvd5ZQwR/Siljeholmen-39.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "41": { img1: "https://i.ibb.co/FLMy6p0v/Siljeholmen-41.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "43": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Hytte+43", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "45": { img1: "https://i.ibb.co/B25rM1d3/Siljeholmen-45.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "47": { img1: "https://i.ibb.co/fVfb425N/Siljeholmen-47.jpg", img2: "https://i.ibb.co/0pcQbBww/47-eier.jpg" },
+  "48": { img1: "https://i.ibb.co/BVZGqSGW/Siljeholmen-48.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "51": { img1: "https://i.ibb.co/WNBZKSy3/Siljeholmen-51.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "53": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "54": { img1: "https://i.ibb.co/W4kKXZ72/Siljeholmen-54.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "56": { img1: "https://i.ibb.co/JRCpj7SV/Siljeholmen-56.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "59": { img1: "https://i.ibb.co/nqF0KcT0/Siljeholmen-59.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "61": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "63": { img1: "https://i.ibb.co/yByTCjBZ/Siljeholmen-63.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "69": { img1: "https://i.ibb.co/S7MddSph/Siljeholmen-69.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "74": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Hytte+74", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "76": { img1: "https://i.ibb.co/1GJpC6fb/Siljeholmen-76.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "78": { img1: "https://i.ibb.co/qM06BrFX/Siljeholmen-78.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "79": { img1: "https://i.ibb.co/h1RhVMHm/Siljeholmen-79.jpg", img2: "https://i.ibb.co/0pV70mLB/79-eier.jpg" },
+  "80": { img1: "https://i.ibb.co/qYJPrDTY/Siljeholmen-80.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "82": { img1: "https://i.ibb.co/Vpg8y70D/Siljeholmen-82.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "84": { img1: "https://i.ibb.co/0j3Mx1TN/Siljeholmen-84.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "86": { img1: "https://i.ibb.co/RG7FwnxJ/Siljeholmen-86.jpg", img2: "https://i.ibb.co/Y4s6Mvyj/Siljeholmen-86-eier.jpg" },
+  "88": { img1: "https://i.ibb.co/0pKxBmtF/Siljeholmen-88.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "90": { img1: "https://i.ibb.co/ds3h6dk7/Siljeholmen-90.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "92": { img1: "https://i.ibb.co/1Gkvmjyy/Siljeholmen-92.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "93": { img1: "https://i.ibb.co/G4yvTgnf/Siljeholmen-93.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "94-syd": { img1: "https://i.ibb.co/LhCB4M8D/Siljeholmen-94-Syd.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "94-nord": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Hytte+94", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "95": { img1: "https://i.ibb.co/CpHjMPyv/Siljeholmen-95.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "96": { img1: "https://i.ibb.co/JwG883ZX/Siljeholmen-96.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "97": { img1: "https://i.ibb.co/DD1kcf2q/Siljeholmen-97.jpg", img2: "https://i.ibb.co/YThSFChG/Siljeholmen-97-eier.jpg" },
+  "98": { img1: "https://i.ibb.co/7d9DDmHJ/Siljeholmen-98.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "100": { img1: "https://i.ibb.co/6c3pMBgm/Siljeholmen-100.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "101": { img1: "https://i.ibb.co/k2YQQMmN/Siljeholmen-101.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "102": { img1: "https://i.ibb.co/7xNwhJXc/Siljeholmen-102.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "108": { img1: "https://i.ibb.co/chY5J22c/Siljeholmen-108.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "109": { img1: "https://i.ibb.co/KxMs0yTQ/Siljeholmen-109.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "111": { img1: "https://i.ibb.co/C50zB75k/Siljeholmen-111.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "112": { img1: "https://i.ibb.co/n8kWCx4Y/Siljeholmen-112.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "202": { img1: "https://i.ibb.co/RGvf7NXG/Siljeholmen-202.jpg", img2: "https://i.ibb.co/bgSgvKFy/Siljeholmen-202-eier.jpg" },
+  "205": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Hytte+205", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "206": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Hytte+206", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "208": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Hytte+208", img2: "https://i.ibb.co/Y7PB7zjY/SIljeholmen-eiere-208.jpg" },
+  "210": { img1: "https://i.ibb.co/1G13yj33/Siljeholmen-210.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "211": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "212": { img1: "https://i.ibb.co/S7ZRhFSS/Siljeholmen-212.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "213": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "215": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "217": { img1: "https://i.ibb.co/wFdCgbxf/Siljeholmen-217.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "220": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Hytte+220", img2: "https://i.ibb.co/yFmdvXRS/Siljeholmen-220-eier.jpg" },
+  "221": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "222": { img1: "https://i.ibb.co/ynfYXs84/Siljeholmen-222.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "223": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "224": { img1: "https://i.ibb.co/bg6CjZd8/Siljeholmen-224.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "225": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "226": { img1: "https://i.ibb.co/FLbs5qh7/Siljeholmen-226.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "227": { img1: "https://i.ibb.co/x81KLFM0/Siljeholmen-227.jpg", img2: "https://i.ibb.co/bMDFL6Vx/Siljeholmen-227-eier.jpg" },
+  "228": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "232": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "234": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "236": { img1: "https://i.ibb.co/mrVLQ3mv/Siljeholmen-236.jpg", img2: "https://i.ibb.co/Xkf5ZzQz/Siljeholmen-236-eier.jpg" },
+  "238": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "239": { img1: "https://i.ibb.co/wZpkLwXB/Siljeholmen-239.jpg", img2: "https://i.ibb.co/Y7Qyf10z/Siljeholmen-239-eier-Lisemarit-Lars-J-rgen.jpg" },
+  "240": { img1: "https://i.ibb.co/HfFrtYq3/Siljeholmen-240.jpg", img2: "https://i.ibb.co/nqrSTfyg/Siljeholmen-240-eier.jpg" },
+  "242": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "244": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://i.ibb.co/ycGkchTh/Siljeholmen-244-eiere.jpg" },
+  "245": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://i.ibb.co/j9Kh5dnz/Siljeholmen-245-eier.jpg" },
+  "246": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "247": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "248": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "249": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "250": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "261": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "263": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" }
+};
+
+
+// Fyll inn bilder fra cabinData (ett sted å oppdatere)
+function fillCabinImages() {
+  document.querySelectorAll('img[data-cabin]').forEach(img => {
+    const id = img.getAttribute('data-cabin');
+    const slot = img.getAttribute('data-slot');
+    if (cabinData[id] && !img.src) {
+      img.src = slot === '1' ? cabinData[id].img1 : cabinData[id].img2;
+    } else if (cabinData[id] && img.getAttribute('src') === '') {
+      img.src = slot === '1' ? cabinData[id].img1 : cabinData[id].img2;
+    }
+  });
+}
+// Run immediately (script is at end of body, DOM is ready)
+fillCabinImages();
+// Also run on DOMContentLoaded as fallback for mobile browsers
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', fillCabinImages);
+}
+
+// ── Cabin positions on map image (x%, y%) from top-left ──
+const cabinPositions = {
+  1:   [38.5, 57.4],  2:   [30.9, 49.5],  3:   [44.0, 56.1],  4:   [33.3, 46.6],
+  5:   [48.7, 54.0],  6:   [35.1, 49.8],  9:   [39.0, 52.2],  11:  [44.2, 52.4],
+  13:  [51.1, 50.5],  14:  [38.7, 44.9],  15:  [52.6, 47.2],  16:  [35.5, 43.9],
+  18:  [36.5, 38.9],  20:  [41.1, 38.0],  21:  [45.3, 38.3],  25:  [50.5, 33.6],
+  26:  [44.4, 31.5],  28:  [49.1, 28.6],  29:  [52.9, 30.3],  33:  [56.4, 27.7],
+  35:  [57.2, 23.0],  37:  [62.3, 26.9],  39:  [58.8, 30.4],  41:  [56.7, 33.4],
+  43:  [64.5, 23.9],  45:  [60.7, 20.0],  47:  [65.4, 18.7],  48:  [65.2, 15.0],
+  51:  [69.4, 17.3],  53:  [70.0, 17.8],  54:  [77.7, 10.5],  56:  [85.8,  4.1],
+  59:  [71.9, 22.2],  61:  [68.8, 24.3],  63:  [71.9, 27.9],  69:  [69.6, 29.9],
+  74:  [68.5, 36.0],  76:  [78.9, 32.9],  78:  [80.6, 31.1],  79:  [62.1, 38.1],
+  80:  [83.9, 32.3],  82:  [92.1, 32.3],  84:  [89.7, 36.4],  86:  [84.1, 36.5],
+  88:  [76.3, 35.8],  90:  [74.0, 39.6],  92:  [71.1, 41.3],  93:  [63.3, 46.0],
+  94:  [65.1, 44.7],  95:  [54.7, 55.9],  96:  [80.1, 40.8],  97:  [62.9, 49.3],
+  98:  [74.2, 45.2],  100: [68.9, 46.5],  101: [61.8, 53.6],  102: [67.9, 50.7],
+  108: [63.1, 61.3],  109: [58.2, 60.6],  111: [52.1, 62.0],  112: [61.3, 66.4],
+  202: [33.0, 59.5],  205: [25.2, 62.7],  206: [29.9, 62.8],  208: [39.0, 60.2],
+  210: [53.8, 73.0],  211: [28.6, 73.9],  212: [51.1, 70.1],  213: [28.4, 77.4],
+  215: [25.7, 81.3],  217: [29.3, 84.8],  220: [44.9, 73.1],  221: [40.9, 73.7],
+  222: [47.5, 77.0],  223: [41.2, 75.9],  224: [45.1, 80.7],  225: [38.6, 77.7],
+  226: [41.3, 78.4],  227: [37.0, 79.1],  228: [38.2, 81.1],  232: [34.2, 86.5],
+  234: [32.8, 90.8],  236: [28.8, 92.8],  238: [23.4, 93.8],  239: [25.0, 84.5],
+  240: [23.0, 87.8],  242: [19.1, 80.5],  244: [19.1, 89.5],  245: [21.9, 76.7],
+  246: [14.9, 94.4],  247: [20.2, 74.6],  248: [10.2, 91.5],  249: [16.9, 75.5],
+  250: [12.0, 85.5],  261: [23.1, 66.9],  263: [19.8, 70.1],
+};
+
+function showMap(cabinNum, rideName) {
+  const pos = cabinPositions[cabinNum];
+  if (!pos) return;
+
+  const modal = document.getElementById('mapModal');
+  const title = document.getElementById('modalTitle');
+  const pin   = document.getElementById('mapPin');
+  const label = document.getElementById('mapPinLabel');
+
+  title.textContent = 'Siljeholmen ' + cabinNum + ' – ' + rideName;
+
+  pin.style.left  = pos[0] + '%';
+  pin.style.top   = pos[1] + '%';
+  pin.style.display = 'block';
+
+  label.style.left = pos[0] + '%';
+  label.style.top  = pos[1] + '%';
+  label.textContent = cabinNum;
+  label.style.display = 'block';
+
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMap() {
+  document.getElementById('mapModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function closeMapIfOverlay(e) {
+  if (e.target === document.getElementById('mapModal')) closeMap();
+}
+
+// Close with Escape key
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeMap();
+});
+
+// Highlight active cabin in index on scroll
+const _idxLinks = document.querySelectorAll('.cabin-index a[href^="#hytte"]');
+const _observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.id;
+      _idxLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+      });
+      // Auto-scroll index to keep active link visible
+      const activeLink = document.querySelector('.cabin-index a.active');
+      if (activeLink) activeLink.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
+  });
+}, { rootMargin: '-10% 0px -60% 0px' });
+document.querySelectorAll('article.cabin-card[id]').forEach(el => _observer.observe(el));
+
+
+// ── Map hover tooltip ──
+const _tooltip = document.getElementById('mapTooltip');
+const _tooltipImg = document.getElementById('mapTooltipImg');
+const _tooltipLabel = document.getElementById('mapTooltipLabel');
+
+
+function buildMapHotspots() {
+  const container = document.querySelector('.map-container');
+  if (!container) return;
+  Object.entries(cabinPositions).forEach(([num, pos]) => {
+    const hotspot = document.createElement('div');
+    hotspot.style.cssText = 'position:absolute;left:' + pos[0] + '%;top:' + pos[1] + '%;width:32px;height:32px;transform:translate(-50%,-50%);cursor:crosshair;z-index:5;';
+    hotspot.dataset.cabin = num;
+    hotspot.addEventListener('mouseenter', function() {
+      const key = this.dataset.cabin;
+      const imgSrc = cabinData[key] ? cabinData[key].img1 : null;
+      if (!imgSrc) return;
+      _tooltipImg.src = imgSrc;
+      _tooltipLabel.textContent = '👆 Gå til hytte ' + key.replace('-', ' ');
+      _tooltip.style.left = pos[0] + '%';
+      _tooltip.style.top = pos[1] + '%';
+      _tooltip.style.display = 'flex';
+      _tooltip.dataset.cabin = key;
+    });
+    hotspot.addEventListener('mouseleave', function() {
+      // Keep tooltip visible briefly so user can click it
+      setTimeout(() => {
+        if (!_tooltip.matches(':hover')) _tooltip.style.display = 'none';
+      }, 200);
+    });
+    container.appendChild(hotspot);
+  });
+
+  // Click tooltip to navigate to cabin
+  _tooltip.addEventListener('click', function() {
+    const key = this.dataset.cabin;
+    if (!key) return;
+    // Build the anchor id: keys like "94-syd" -> "hytte-94-syd", "21-Nord" -> "hytte-21-Nord"
+    const anchorId = 'hytte-' + key;
+    const target = document.getElementById(anchorId);
+    if (target) {
+      closeMap();
+      setTimeout(() => {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Highlight briefly
+        target.style.outline = '3px solid var(--accent)';
+        target.style.outlineOffset = '4px';
+        setTimeout(() => { target.style.outline = ''; target.style.outlineOffset = ''; }, 2000);
+      }, 300);
+    }
+  });
+
+  _tooltip.addEventListener('mouseleave', function() {
+    _tooltip.style.display = 'none';
+  });
+}
+
+document.addEventListener('DOMContentLoaded', buildMapHotspots);
+
+</script>
+
+</body>
+</html>
