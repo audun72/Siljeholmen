@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="no-referrer" />
   <title>Hyttene på Siljeholmen</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
   <style>
@@ -348,14 +349,7 @@
     @media (max-width: 640px) {
       .intro-section { padding: 26px 20px; margin: -20px 14px 0; }
       .cabin-images { grid-template-columns: 1fr; }
-      .cabin-images .img-landscape,
-      .cabin-images .img-landscape img,
-      .cabin-images .img-square,
-      .cabin-images .img-square img {
-        height: auto;
-        min-height: 0;
-        aspect-ratio: 4 / 3;
-      }
+      .cabin-images .img-square { aspect-ratio: 4 / 3; }
       .cabin-body { padding: 20px 18px 22px; }
       .map-modal { max-width: 100%; }
     }
@@ -543,7 +537,7 @@
       <button class="map-close" onclick="closeMap()">✕</button>
     </div>
     <div class="map-container">
-      <img class="map-bg" src="https://i.ibb.co/zWTSh3BY/Kart-Siljeholmen.jpg" alt="Kart over Siljeholmen" />
+      <img referrerpolicy="no-referrer" class="map-bg" src="https://i.ibb.co/zWTSh3BY/Kart-Siljeholmen.jpg" alt="Kart over Siljeholmen" />
       <!-- Pin injected by JS -->
       <div id="mapPin" class="map-pin" style="display:none">
         <svg viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -552,7 +546,7 @@
         </svg>
       </div>
       <div id="mapPinLabel" class="map-pin-label" style="display:none"></div>
-      <div id="mapTooltip" class="map-tooltip"><img id="mapTooltipImg" src="" alt="" /><div id="mapTooltipLabel" class="map-tooltip-label"></div></div>
+      <div id="mapTooltip" class="map-tooltip"><img referrerpolicy="no-referrer" id="mapTooltipImg" src="" alt="" /><div id="mapTooltipLabel" class="map-tooltip-label"></div></div>
     </div>
   </div>
 </div>
@@ -581,8 +575,8 @@
   <!-- ══ HYTTE 1 ══ -->
   <article class="cabin-card" id="hytte-1">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://raw.githubusercontent.com/audun72/siljeholmen-bilder/main/hytte001.jpg" data-cabin="1" data-slot="1" alt="Hytte 1" /></div>
-      <div class="img-square"><img src="https://i.ibb.co/v4MTDwMg/SIljeholmen-1-eiere.jpg" data-cabin="1" data-slot="2" alt="Eiere hytte 1" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="1" data-slot="1" alt="Hytte 1" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="1" data-slot="2" alt="Eiere hytte 1" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 1</div>
@@ -598,8 +592,8 @@
   <!-- ══ HYTTE 2 ══ -->
   <article class="cabin-card" id="hytte-2">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://raw.githubusercontent.com/audun72/siljeholmen-bilder/main/hytte002.jpg" data-cabin="2" data-slot="1" alt="Hytte 2" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="2" data-slot="2" alt="Eiere hytte 2" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="2" data-slot="1" alt="Hytte 2" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="2" data-slot="2" alt="Eiere hytte 2" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 2</div>
@@ -615,8 +609,8 @@
   <!-- ══ HYTTE 3 ══ -->
   <article class="cabin-card" id="hytte-3">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://raw.githubusercontent.com/audun72/siljeholmen-bilder/main/hytte003.jpg" data-cabin="3" data-slot="1" alt="Hytte 3" /></div>
-      <div class="img-square"><img src="https://i.ibb.co/wNxVy8dk/Siljeholmen-3-eier.jpg" data-cabin="3" data-slot="2" alt="Eiere hytte 3" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="3" data-slot="1" alt="Hytte 3" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="3" data-slot="2" alt="Eiere hytte 3" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 3</div>
@@ -632,8 +626,8 @@
   <!-- ══ HYTTE 4 ══ -->
   <article class="cabin-card" id="hytte-4">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://raw.githubusercontent.com/audun72/siljeholmen-bilder/main/hytte004.jpg" data-cabin="4" data-slot="1" alt="Hytte 4" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="4" data-slot="2" alt="Eiere hytte 4" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="4" data-slot="1" alt="Hytte 4" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="4" data-slot="2" alt="Eiere hytte 4" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 4</div>
@@ -649,8 +643,8 @@
   <!-- ══ HYTTE 5 ══ -->
   <article class="cabin-card" id="hytte-5">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://raw.githubusercontent.com/audun72/siljeholmen-bilder/main/hytte005.jpg" data-cabin="5" data-slot="1" alt="Hytte 5" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="5" data-slot="2" alt="Eiere hytte 5" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="5" data-slot="1" alt="Hytte 5" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="5" data-slot="2" alt="Eiere hytte 5" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 5</div>
@@ -666,8 +660,8 @@
   <!-- ══ HYTTE 6 ══ -->
   <article class="cabin-card" id="hytte-6">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://raw.githubusercontent.com/audun72/siljeholmen-bilder/main/hytte006.jpg" data-cabin="6" data-slot="1" alt="Hytte 6" /></div>
-      <div class="img-square"><img src="https://i.ibb.co/LdppLMpN/Silkjeholmen-6-eier.jpg" data-cabin="6" data-slot="2" alt="Eiere hytte 6" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="6" data-slot="1" alt="Hytte 6" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="6" data-slot="2" alt="Eiere hytte 6" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 6</div>
@@ -683,8 +677,8 @@
   <!-- ══ HYTTE 9 ══ -->
   <article class="cabin-card" id="hytte-9">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/JF2x2F4W/Siljeholmen-9.jpg" data-cabin="9" data-slot="1" alt="Hytte 9" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="9" data-slot="2" alt="Eiere hytte 9" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="9" data-slot="1" alt="Hytte 9" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="9" data-slot="2" alt="Eiere hytte 9" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 9</div>
@@ -700,8 +694,8 @@
   <!-- ══ HYTTE 11 ══ -->
   <article class="cabin-card" id="hytte-11">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/NdqD326r/Siljeholmen-11.jpg" data-cabin="11" data-slot="1" alt="Hytte 11" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="11" data-slot="2" alt="Eiere hytte 11" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="11" data-slot="1" alt="Hytte 11" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="11" data-slot="2" alt="Eiere hytte 11" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 11</div>
@@ -717,8 +711,8 @@
   <!-- ══ HYTTE 13 ══ -->
   <article class="cabin-card" id="hytte-13">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/39pbL1b8/Siljeholmen-13.jpg" data-cabin="13" data-slot="1" alt="Hytte 13" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="13" data-slot="2" alt="Eiere hytte 13" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="13" data-slot="1" alt="Hytte 13" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="13" data-slot="2" alt="Eiere hytte 13" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 13</div>
@@ -734,8 +728,8 @@
   <!-- ══ HYTTE 14 ══ -->
   <article class="cabin-card" id="hytte-14">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/21XTPyPq/Siljeholmen-14.jpg" data-cabin="14" data-slot="1" alt="Hytte 14" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="14" data-slot="2" alt="Eiere hytte 14" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="14" data-slot="1" alt="Hytte 14" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="14" data-slot="2" alt="Eiere hytte 14" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 14</div>
@@ -751,8 +745,8 @@
   <!-- ══ HYTTE 15 ══ -->
   <article class="cabin-card" id="hytte-15">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/yBGvyYWZ/Siljeholmen-15.jpg" data-cabin="15" data-slot="1" alt="Hytte 15" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="15" data-slot="2" alt="Eiere hytte 15" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="15" data-slot="1" alt="Hytte 15" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="15" data-slot="2" alt="Eiere hytte 15" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 15</div>
@@ -768,8 +762,8 @@
   <!-- ══ HYTTE 16 ══ -->
   <article class="cabin-card" id="hytte-16">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="16" data-slot="1" alt="Hytte 16" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="16" data-slot="2" alt="Eiere hytte 16" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="16" data-slot="1" alt="Hytte 16" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="16" data-slot="2" alt="Eiere hytte 16" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 16</div>
@@ -785,8 +779,8 @@
   <!-- ══ HYTTE 18 ══ -->
   <article class="cabin-card" id="hytte-18">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="18" data-slot="1" alt="Hytte 18" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="18" data-slot="2" alt="Eiere hytte 18" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="18" data-slot="1" alt="Hytte 18" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="18" data-slot="2" alt="Eiere hytte 18" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 18</div>
@@ -802,8 +796,8 @@
   <!-- ══ HYTTE 20 ══ -->
   <article class="cabin-card" id="hytte-20">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/rKJSWhzz/Siljeholmen-20.jpg" data-cabin="20" data-slot="1" alt="Hytte 20" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="20" data-slot="2" alt="Eiere hytte 20" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="20" data-slot="1" alt="Hytte 20" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="20" data-slot="2" alt="Eiere hytte 20" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 20</div>
@@ -819,8 +813,8 @@
   <!-- ══ HYTTE 21 SYD ══ -->
   <article class="cabin-card" id="hytte-21-Syd">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="21-Syd" data-slot="1" alt="Hytte 21 Syd" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="21" data-slot="2" alt="Eiere hytte 21" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="21-Syd" data-slot="1" alt="Hytte 21 Syd" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="21" data-slot="2" alt="Eiere hytte 21" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 21 Syd</div>
@@ -836,8 +830,8 @@
   <!-- ══ HYTTE 21 NORD ══ -->
   <article class="cabin-card" id="hytte-21-Nord">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/ymbhRV8b/Siljeholmen-21-Nord.jpg" data-cabin="21-Nord" data-slot="1" alt="Hytte 21 Nord" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="21" data-slot="2" alt="Eiere hytte 21" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="21-Nord" data-slot="1" alt="Hytte 21 Nord" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="21" data-slot="2" alt="Eiere hytte 21" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 21 Nord</div>
@@ -853,8 +847,8 @@
   <!-- ══ HYTTE 25 ══ -->
   <article class="cabin-card" id="hytte-25">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/PZzMKYZq/Siljeholmen-25.jpg" data-cabin="25" data-slot="1" alt="Hytte 25" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="25" data-slot="2" alt="Eiere hytte 25" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="25" data-slot="1" alt="Hytte 25" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="25" data-slot="2" alt="Eiere hytte 25" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 25</div>
@@ -870,8 +864,8 @@
   <!-- ══ HYTTE 26 ══ -->
   <article class="cabin-card" id="hytte-26">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/gZXfVkrz/Siljeholmen-26.jpg" data-cabin="26" data-slot="1" alt="Hytte 26" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="26" data-slot="2" alt="Eiere hytte 26" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="26" data-slot="1" alt="Hytte 26" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="26" data-slot="2" alt="Eiere hytte 26" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 26</div>
@@ -887,8 +881,8 @@
   <!-- ══ HYTTE 28 ══ -->
   <article class="cabin-card" id="hytte-28">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/cKRDN9LG/Siljeholmen-28.jpg" data-cabin="28" data-slot="1" alt="Hytte 28" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="28" data-slot="2" alt="Eiere hytte 28" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="28" data-slot="1" alt="Hytte 28" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="28" data-slot="2" alt="Eiere hytte 28" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 28</div>
@@ -904,8 +898,8 @@
   <!-- ══ HYTTE 29 ══ -->
   <article class="cabin-card" id="hytte-29">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/G4CnRjGg/Siljeholmen-29.jpg" data-cabin="29" data-slot="1" alt="Hytte 29" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="29" data-slot="2" alt="Eiere hytte 29" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="29" data-slot="1" alt="Hytte 29" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="29" data-slot="2" alt="Eiere hytte 29" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 29</div>
@@ -921,8 +915,8 @@
   <!-- ══ HYTTE 33 ══ -->
   <article class="cabin-card" id="hytte-33">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/YTkxv3vs/Siljeholmen-33.jpg" data-cabin="33" data-slot="1" alt="Hytte 33" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="33" data-slot="2" alt="Eiere hytte 33" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="33" data-slot="1" alt="Hytte 33" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="33" data-slot="2" alt="Eiere hytte 33" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 33</div>
@@ -938,8 +932,8 @@
   <!-- ══ HYTTE 35 ══ -->
   <article class="cabin-card" id="hytte-35">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/4nrFG2Kc/Siljeholmen-35.jpg" data-cabin="35" data-slot="1" alt="Hytte 35" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="35" data-slot="2" alt="Eiere hytte 35" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="35" data-slot="1" alt="Hytte 35" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="35" data-slot="2" alt="Eiere hytte 35" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 35</div>
@@ -955,8 +949,8 @@
   <!-- ══ HYTTE 37 ══ -->
   <article class="cabin-card" id="hytte-37">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/spN5nXL7/Siljeholmen-37.jpg" data-cabin="37" data-slot="1" alt="Hytte 37" /></div>
-      <div class="img-square"><img src="https://i.ibb.co/zVS38vmf/SIljeholmen-eiere-37-hytte.jpg" data-cabin="37" data-slot="2" alt="Eiere hytte 37" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="37" data-slot="1" alt="Hytte 37" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="37" data-slot="2" alt="Eiere hytte 37" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 37</div>
@@ -972,8 +966,8 @@
   <!-- ══ HYTTE 39 ══ -->
   <article class="cabin-card" id="hytte-39">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/Qvd5ZQwR/Siljeholmen-39.jpg" data-cabin="39" data-slot="1" alt="Hytte 39" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="39" data-slot="2" alt="Eiere hytte 39" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="39" data-slot="1" alt="Hytte 39" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="39" data-slot="2" alt="Eiere hytte 39" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 39</div>
@@ -989,8 +983,8 @@
   <!-- ══ HYTTE 41 ══ -->
   <article class="cabin-card" id="hytte-41">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/FLMy6p0v/Siljeholmen-41.jpg" data-cabin="41" data-slot="1" alt="Hytte 41" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="41" data-slot="2" alt="Eiere hytte 41" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="41" data-slot="1" alt="Hytte 41" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="41" data-slot="2" alt="Eiere hytte 41" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 41</div>
@@ -1006,8 +1000,8 @@
   <!-- ══ HYTTE 43 ══ -->
   <article class="cabin-card" id="hytte-43">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Hytte+43" data-cabin="43" data-slot="1" alt="Hytte 43" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="43" data-slot="2" alt="Eiere hytte 43" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="43" data-slot="1" alt="Hytte 43" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="43" data-slot="2" alt="Eiere hytte 43" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 43</div>
@@ -1023,8 +1017,8 @@
   <!-- ══ HYTTE 45 ══ -->
   <article class="cabin-card" id="hytte-45">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/B25rM1d3/Siljeholmen-45.jpg" data-cabin="45" data-slot="1" alt="Hytte 45" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="45" data-slot="2" alt="Eiere hytte 45" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="45" data-slot="1" alt="Hytte 45" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="45" data-slot="2" alt="Eiere hytte 45" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 45</div>
@@ -1040,8 +1034,8 @@
   <!-- ══ HYTTE 47 ══ -->
   <article class="cabin-card" id="hytte-47">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/fVfb425N/Siljeholmen-47.jpg" data-cabin="47" data-slot="1" alt="Hytte 47" /></div>
-      <div class="img-square"><img src="https://i.ibb.co/0pcQbBww/47-eier.jpg" data-cabin="47" data-slot="2" alt="Eiere hytte 47" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="47" data-slot="1" alt="Hytte 47" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="47" data-slot="2" alt="Eiere hytte 47" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 47</div>
@@ -1057,8 +1051,8 @@
   <!-- ══ HYTTE 48 ══ -->
   <article class="cabin-card" id="hytte-48">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/BVZGqSGW/Siljeholmen-48.jpg" data-cabin="48" data-slot="1" alt="Hytte 48" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="48" data-slot="2" alt="Eiere hytte 48" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="48" data-slot="1" alt="Hytte 48" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="48" data-slot="2" alt="Eiere hytte 48" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 48</div>
@@ -1074,8 +1068,8 @@
   <!-- ══ HYTTE 51 ══ -->
   <article class="cabin-card" id="hytte-51">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/WNBZKSy3/Siljeholmen-51.jpg" data-cabin="51" data-slot="1" alt="Hytte 51" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="51" data-slot="2" alt="Eiere hytte 51" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="51" data-slot="1" alt="Hytte 51" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="51" data-slot="2" alt="Eiere hytte 51" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 51</div>
@@ -1091,8 +1085,8 @@
   <!-- ══ HYTTE 53 ══ -->
   <article class="cabin-card" id="hytte-53">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="53" data-slot="1" alt="Hytte 53" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="53" data-slot="2" alt="Eiere hytte 53" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="53" data-slot="1" alt="Hytte 53" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="53" data-slot="2" alt="Eiere hytte 53" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 53</div>
@@ -1108,8 +1102,8 @@
   <!-- ══ HYTTE 54 ══ -->
   <article class="cabin-card" id="hytte-54">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/W4kKXZ72/Siljeholmen-54.jpg" data-cabin="54" data-slot="1" alt="Hytte 54" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="54" data-slot="2" alt="Eiere hytte 54" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="54" data-slot="1" alt="Hytte 54" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="54" data-slot="2" alt="Eiere hytte 54" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 54</div>
@@ -1125,8 +1119,8 @@
   <!-- ══ HYTTE 56 ══ -->
   <article class="cabin-card" id="hytte-56">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/JRCpj7SV/Siljeholmen-56.jpg" data-cabin="56" data-slot="1" alt="Hytte 56" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="56" data-slot="2" alt="Eiere hytte 56" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="56" data-slot="1" alt="Hytte 56" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="56" data-slot="2" alt="Eiere hytte 56" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 56</div>
@@ -1142,8 +1136,8 @@
   <!-- ══ HYTTE 59 ══ -->
   <article class="cabin-card" id="hytte-59">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/nqF0KcT0/Siljeholmen-59.jpg" data-cabin="59" data-slot="1" alt="Hytte 59" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="59" data-slot="2" alt="Eiere hytte 59" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="59" data-slot="1" alt="Hytte 59" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="59" data-slot="2" alt="Eiere hytte 59" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 59</div>
@@ -1159,8 +1153,8 @@
   <!-- ══ HYTTE 61 ══ -->
   <article class="cabin-card" id="hytte-61">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="61" data-slot="1" alt="Hytte 61" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="61" data-slot="2" alt="Eiere hytte 61" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="61" data-slot="1" alt="Hytte 61" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="61" data-slot="2" alt="Eiere hytte 61" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 61</div>
@@ -1176,8 +1170,8 @@
   <!-- ══ HYTTE 63 ══ -->
   <article class="cabin-card" id="hytte-63">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/yByTCjBZ/Siljeholmen-63.jpg" data-cabin="63" data-slot="1" alt="Hytte 63" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="63" data-slot="2" alt="Eiere hytte 63" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="63" data-slot="1" alt="Hytte 63" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="63" data-slot="2" alt="Eiere hytte 63" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 63</div>
@@ -1193,8 +1187,8 @@
   <!-- ══ HYTTE 69 ══ -->
   <article class="cabin-card" id="hytte-69">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/S7MddSph/Siljeholmen-69.jpg" data-cabin="69" data-slot="1" alt="Hytte 69" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="69" data-slot="2" alt="Eiere hytte 69" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="69" data-slot="1" alt="Hytte 69" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="69" data-slot="2" alt="Eiere hytte 69" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 69</div>
@@ -1210,8 +1204,8 @@
   <!-- ══ HYTTE 74 ══ -->
   <article class="cabin-card" id="hytte-74">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Hytte+74" data-cabin="74" data-slot="1" alt="Hytte 74" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="74" data-slot="2" alt="Eiere hytte 74" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="74" data-slot="1" alt="Hytte 74" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="74" data-slot="2" alt="Eiere hytte 74" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 74</div>
@@ -1227,8 +1221,8 @@
   <!-- ══ HYTTE 76 ══ -->
   <article class="cabin-card" id="hytte-76">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/1GJpC6fb/Siljeholmen-76.jpg" data-cabin="76" data-slot="1" alt="Hytte 76" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="76" data-slot="2" alt="Eiere hytte 76" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="76" data-slot="1" alt="Hytte 76" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="76" data-slot="2" alt="Eiere hytte 76" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 76</div>
@@ -1244,8 +1238,8 @@
   <!-- ══ HYTTE 78 ══ -->
   <article class="cabin-card" id="hytte-78">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/qM06BrFX/Siljeholmen-78.jpg" data-cabin="78" data-slot="1" alt="Hytte 78" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="78" data-slot="2" alt="Eiere hytte 78" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="78" data-slot="1" alt="Hytte 78" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="78" data-slot="2" alt="Eiere hytte 78" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 78</div>
@@ -1261,8 +1255,8 @@
   <!-- ══ HYTTE 79 ══ -->
   <article class="cabin-card" id="hytte-79">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/h1RhVMHm/Siljeholmen-79.jpg" data-cabin="79" data-slot="1" alt="Hytte 79" /></div>
-      <div class="img-square"><img src="https://i.ibb.co/0pV70mLB/79-eier.jpg" data-cabin="79" data-slot="2" alt="Eiere hytte 79" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="79" data-slot="1" alt="Hytte 79" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="79" data-slot="2" alt="Eiere hytte 79" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 79</div>
@@ -1278,8 +1272,8 @@
   <!-- ══ HYTTE 80 ══ -->
   <article class="cabin-card" id="hytte-80">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/qYJPrDTY/Siljeholmen-80.jpg" data-cabin="80" data-slot="1" alt="Hytte 80" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="80" data-slot="2" alt="Eiere hytte 80" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="80" data-slot="1" alt="Hytte 80" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="80" data-slot="2" alt="Eiere hytte 80" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 80</div>
@@ -1295,8 +1289,8 @@
   <!-- ══ HYTTE 82 ══ -->
   <article class="cabin-card" id="hytte-82">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/Vpg8y70D/Siljeholmen-82.jpg" data-cabin="82" data-slot="1" alt="Hytte 82" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="82" data-slot="2" alt="Eiere hytte 82" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="82" data-slot="1" alt="Hytte 82" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="82" data-slot="2" alt="Eiere hytte 82" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 82</div>
@@ -1312,8 +1306,8 @@
   <!-- ══ HYTTE 84 ══ -->
   <article class="cabin-card" id="hytte-84">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/0j3Mx1TN/Siljeholmen-84.jpg" data-cabin="84" data-slot="1" alt="Hytte 84" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="84" data-slot="2" alt="Eiere hytte 84" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="84" data-slot="1" alt="Hytte 84" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="84" data-slot="2" alt="Eiere hytte 84" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 84</div>
@@ -1329,8 +1323,8 @@
   <!-- ══ HYTTE 86 ══ -->
   <article class="cabin-card" id="hytte-86">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/RG7FwnxJ/Siljeholmen-86.jpg" data-cabin="86" data-slot="1" alt="Hytte 86" /></div>
-      <div class="img-square"><img src="https://i.ibb.co/Y4s6Mvyj/Siljeholmen-86-eier.jpg" data-cabin="86" data-slot="2" alt="Eiere hytte 86" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="86" data-slot="1" alt="Hytte 86" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="86" data-slot="2" alt="Eiere hytte 86" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 86</div>
@@ -1346,8 +1340,8 @@
   <!-- ══ HYTTE 88 ══ -->
   <article class="cabin-card" id="hytte-88">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/0pKxBmtF/Siljeholmen-88.jpg" data-cabin="88" data-slot="1" alt="Hytte 88" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="88" data-slot="2" alt="Eiere hytte 88" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="88" data-slot="1" alt="Hytte 88" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="88" data-slot="2" alt="Eiere hytte 88" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 88</div>
@@ -1363,8 +1357,8 @@
   <!-- ══ HYTTE 90 ══ -->
   <article class="cabin-card" id="hytte-90">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/ds3h6dk7/Siljeholmen-90.jpg" data-cabin="90" data-slot="1" alt="Hytte 90" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="90" data-slot="2" alt="Eiere hytte 90" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="90" data-slot="1" alt="Hytte 90" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="90" data-slot="2" alt="Eiere hytte 90" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 90</div>
@@ -1380,8 +1374,8 @@
   <!-- ══ HYTTE 92 ══ -->
   <article class="cabin-card" id="hytte-92">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/1Gkvmjyy/Siljeholmen-92.jpg" data-cabin="92" data-slot="1" alt="Hytte 92" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="92" data-slot="2" alt="Eiere hytte 92" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="92" data-slot="1" alt="Hytte 92" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="92" data-slot="2" alt="Eiere hytte 92" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 92</div>
@@ -1397,8 +1391,8 @@
   <!-- ══ HYTTE 93 ══ -->
   <article class="cabin-card" id="hytte-93">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/G4yvTgnf/Siljeholmen-93.jpg" data-cabin="93" data-slot="1" alt="Hytte 93" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="93" data-slot="2" alt="Eiere hytte 93" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="93" data-slot="1" alt="Hytte 93" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="93" data-slot="2" alt="Eiere hytte 93" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 93</div>
@@ -1414,8 +1408,8 @@
   <!-- ══ HYTTE 94 SYD ══ -->
   <article class="cabin-card" id="hytte-94-syd">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/LhCB4M8D/Siljeholmen-94-Syd.jpg" data-cabin="94-syd" data-slot="1" alt="Hytte 94 syd" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="94" data-slot="2" alt="Eiere hytte 94" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="94-syd" data-slot="1" alt="Hytte 94 syd" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="94" data-slot="2" alt="Eiere hytte 94" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 94 Syd</div>
@@ -1431,8 +1425,8 @@
   <!-- ══ HYTTE 94 NORD ══ -->
   <article class="cabin-card" id="hytte-94-nord">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Hytte+94" data-cabin="94-nord" data-slot="1" alt="Hytte 94 nord" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="94" data-slot="2" alt="Eiere hytte 94" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="94-nord" data-slot="1" alt="Hytte 94 nord" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="94" data-slot="2" alt="Eiere hytte 94" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 94 Nord</div>
@@ -1448,8 +1442,8 @@
   <!-- ══ HYTTE 95 ══ -->
   <article class="cabin-card" id="hytte-95">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/CpHjMPyv/Siljeholmen-95.jpg" data-cabin="95" data-slot="1" alt="Hytte 95" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="95" data-slot="2" alt="Eiere hytte 95" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="95" data-slot="1" alt="Hytte 95" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="95" data-slot="2" alt="Eiere hytte 95" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 95</div>
@@ -1465,8 +1459,8 @@
   <!-- ══ HYTTE 96 ══ -->
   <article class="cabin-card" id="hytte-96">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/JwG883ZX/Siljeholmen-96.jpg" data-cabin="96" data-slot="1" alt="Hytte 96" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="96" data-slot="2" alt="Eiere hytte 96" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="96" data-slot="1" alt="Hytte 96" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="96" data-slot="2" alt="Eiere hytte 96" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 96</div>
@@ -1482,8 +1476,8 @@
   <!-- ══ HYTTE 97 ══ -->
   <article class="cabin-card" id="hytte-97">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/DD1kcf2q/Siljeholmen-97.jpg" data-cabin="97" data-slot="1" alt="Hytte 97" /></div>
-      <div class="img-square"><img src="https://i.ibb.co/YThSFChG/Siljeholmen-97-eier.jpg" data-cabin="97" data-slot="2" alt="Eiere hytte 97" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="97" data-slot="1" alt="Hytte 97" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="97" data-slot="2" alt="Eiere hytte 97" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 97</div>
@@ -1499,8 +1493,8 @@
   <!-- ══ HYTTE 98 ══ -->
   <article class="cabin-card" id="hytte-98">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/7d9DDmHJ/Siljeholmen-98.jpg" data-cabin="98" data-slot="1" alt="Hytte 98" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="98" data-slot="2" alt="Eiere hytte 98" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="98" data-slot="1" alt="Hytte 98" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="98" data-slot="2" alt="Eiere hytte 98" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 98</div>
@@ -1516,8 +1510,8 @@
   <!-- ══ HYTTE 100 ══ -->
   <article class="cabin-card" id="hytte-100">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/6c3pMBgm/Siljeholmen-100.jpg" data-cabin="100" data-slot="1" alt="Hytte 100" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="100" data-slot="2" alt="Eiere hytte 100" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="100" data-slot="1" alt="Hytte 100" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="100" data-slot="2" alt="Eiere hytte 100" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 100</div>
@@ -1533,8 +1527,8 @@
   <!-- ══ HYTTE 101 ══ -->
   <article class="cabin-card" id="hytte-101">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/k2YQQMmN/Siljeholmen-101.jpg" data-cabin="101" data-slot="1" alt="Hytte 101" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="101" data-slot="2" alt="Eiere hytte 101" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="101" data-slot="1" alt="Hytte 101" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="101" data-slot="2" alt="Eiere hytte 101" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 101</div>
@@ -1550,8 +1544,8 @@
   <!-- ══ HYTTE 102 ══ -->
   <article class="cabin-card" id="hytte-102">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/7xNwhJXc/Siljeholmen-102.jpg" data-cabin="102" data-slot="1" alt="Hytte 102" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="102" data-slot="2" alt="Eiere hytte 102" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="102" data-slot="1" alt="Hytte 102" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="102" data-slot="2" alt="Eiere hytte 102" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 102</div>
@@ -1567,8 +1561,8 @@
   <!-- ══ HYTTE 108 ══ -->
   <article class="cabin-card" id="hytte-108">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/chY5J22c/Siljeholmen-108.jpg" data-cabin="108" data-slot="1" alt="Hytte 108" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="108" data-slot="2" alt="Eiere hytte 108" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="108" data-slot="1" alt="Hytte 108" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="108" data-slot="2" alt="Eiere hytte 108" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 108</div>
@@ -1584,8 +1578,8 @@
   <!-- ══ HYTTE 109 ══ -->
   <article class="cabin-card" id="hytte-109">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/KxMs0yTQ/Siljeholmen-109.jpg" data-cabin="109" data-slot="1" alt="Hytte 109" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="109" data-slot="2" alt="Eiere hytte 109" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="109" data-slot="1" alt="Hytte 109" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="109" data-slot="2" alt="Eiere hytte 109" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 109</div>
@@ -1601,8 +1595,8 @@
   <!-- ══ HYTTE 111 ══ -->
   <article class="cabin-card" id="hytte-111">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/C50zB75k/Siljeholmen-111.jpg" data-cabin="111" data-slot="1" alt="Hytte 111" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="111" data-slot="2" alt="Eiere hytte 111" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="111" data-slot="1" alt="Hytte 111" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="111" data-slot="2" alt="Eiere hytte 111" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 111</div>
@@ -1618,8 +1612,8 @@
   <!-- ══ HYTTE 112 ══ -->
   <article class="cabin-card" id="hytte-112">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/n8kWCx4Y/Siljeholmen-112.jpg" data-cabin="112" data-slot="1" alt="Hytte 112" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="112" data-slot="2" alt="Eiere hytte 112" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="112" data-slot="1" alt="Hytte 112" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="112" data-slot="2" alt="Eiere hytte 112" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 112</div>
@@ -1635,8 +1629,8 @@
   <!-- ══ HYTTE 202 ══ -->
   <article class="cabin-card" id="hytte-202">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/RGvf7NXG/Siljeholmen-202.jpg" data-cabin="202" data-slot="1" alt="Hytte 202" /></div>
-      <div class="img-square"><img src="https://i.ibb.co/bgSgvKFy/Siljeholmen-202-eier.jpg" data-cabin="202" data-slot="2" alt="Eiere hytte 202" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="202" data-slot="1" alt="Hytte 202" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="202" data-slot="2" alt="Eiere hytte 202" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 202</div>
@@ -1652,8 +1646,8 @@
   <!-- ══ HYTTE 205 ══ -->
   <article class="cabin-card" id="hytte-205">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Hytte+205" data-cabin="205" data-slot="1" alt="Hytte 205" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="205" data-slot="2" alt="Eiere hytte 205" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="205" data-slot="1" alt="Hytte 205" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="205" data-slot="2" alt="Eiere hytte 205" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 205</div>
@@ -1669,8 +1663,8 @@
   <!-- ══ HYTTE 206 ══ -->
   <article class="cabin-card" id="hytte-206">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Hytte+206" data-cabin="206" data-slot="1" alt="Hytte 206" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="206" data-slot="2" alt="Eiere hytte 206" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="206" data-slot="1" alt="Hytte 206" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="206" data-slot="2" alt="Eiere hytte 206" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 206</div>
@@ -1686,8 +1680,8 @@
   <!-- ══ HYTTE 208 ══ -->
   <article class="cabin-card" id="hytte-208">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Hytte+208" data-cabin="208" data-slot="1" alt="Hytte 208" /></div>
-      <div class="img-square"><img src="https://i.ibb.co/Y7PB7zjY/SIljeholmen-eiere-208.jpg" data-cabin="208" data-slot="2" alt="Eiere hytte 208" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="208" data-slot="1" alt="Hytte 208" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="208" data-slot="2" alt="Eiere hytte 208" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 208</div>
@@ -1703,8 +1697,8 @@
   <!-- ══ HYTTE 210 ══ -->
   <article class="cabin-card" id="hytte-210">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/1G13yj33/Siljeholmen-210.jpg" data-cabin="210" data-slot="1" alt="Hytte 210" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="210" data-slot="2" alt="Eiere hytte 210" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="210" data-slot="1" alt="Hytte 210" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="210" data-slot="2" alt="Eiere hytte 210" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 210</div>
@@ -1720,8 +1714,8 @@
   <!-- ══ HYTTE 211 ══ -->
   <article class="cabin-card" id="hytte-211">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="211" data-slot="1" alt="Hytte 211" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="211" data-slot="2" alt="Eiere hytte 211" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="211" data-slot="1" alt="Hytte 211" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="211" data-slot="2" alt="Eiere hytte 211" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 211</div>
@@ -1737,8 +1731,8 @@
   <!-- ══ HYTTE 212 ══ -->
   <article class="cabin-card" id="hytte-212">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/S7ZRhFSS/Siljeholmen-212.jpg" data-cabin="212" data-slot="1" alt="Hytte 212" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="212" data-slot="2" alt="Eiere hytte 212" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="212" data-slot="1" alt="Hytte 212" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="212" data-slot="2" alt="Eiere hytte 212" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 212</div>
@@ -1754,8 +1748,8 @@
   <!-- ══ HYTTE 213 ══ -->
   <article class="cabin-card" id="hytte-213">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="213" data-slot="1" alt="Hytte 213" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="213" data-slot="2" alt="Eiere hytte 213" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="213" data-slot="1" alt="Hytte 213" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="213" data-slot="2" alt="Eiere hytte 213" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 213</div>
@@ -1771,8 +1765,8 @@
   <!-- ══ HYTTE 215 ══ -->
   <article class="cabin-card" id="hytte-215">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="215" data-slot="1" alt="Hytte 215" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="215" data-slot="2" alt="Eiere hytte 215" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="215" data-slot="1" alt="Hytte 215" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="215" data-slot="2" alt="Eiere hytte 215" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 215</div>
@@ -1788,8 +1782,8 @@
   <!-- ══ HYTTE 217 ══ -->
   <article class="cabin-card" id="hytte-217">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/wFdCgbxf/Siljeholmen-217.jpg" data-cabin="217" data-slot="1" alt="Hytte 217" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="217" data-slot="2" alt="Eiere hytte 217" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="217" data-slot="1" alt="Hytte 217" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="217" data-slot="2" alt="Eiere hytte 217" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 217</div>
@@ -1805,8 +1799,8 @@
   <!-- ══ HYTTE 220 ══ -->
   <article class="cabin-card" id="hytte-220">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Hytte+220" data-cabin="220" data-slot="1" alt="Hytte 220" /></div>
-      <div class="img-square"><img src="https://i.ibb.co/yFmdvXRS/Siljeholmen-220-eier.jpg" data-cabin="220" data-slot="2" alt="Eiere hytte 220" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="220" data-slot="1" alt="Hytte 220" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="220" data-slot="2" alt="Eiere hytte 220" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 220</div>
@@ -1822,8 +1816,8 @@
   <!-- ══ HYTTE 221 ══ -->
   <article class="cabin-card" id="hytte-221">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="221" data-slot="1" alt="Hytte 221" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="221" data-slot="2" alt="Eiere hytte 221" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="221" data-slot="1" alt="Hytte 221" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="221" data-slot="2" alt="Eiere hytte 221" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 221</div>
@@ -1839,8 +1833,8 @@
   <!-- ══ HYTTE 222 ══ -->
   <article class="cabin-card" id="hytte-222">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/ynfYXs84/Siljeholmen-222.jpg" data-cabin="222" data-slot="1" alt="Hytte 222" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="222" data-slot="2" alt="Eiere hytte 222" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="222" data-slot="1" alt="Hytte 222" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="222" data-slot="2" alt="Eiere hytte 222" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 222</div>
@@ -1856,8 +1850,8 @@
   <!-- ══ HYTTE 223 ══ -->
   <article class="cabin-card" id="hytte-223">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="223" data-slot="1" alt="Hytte 223" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="223" data-slot="2" alt="Eiere hytte 223" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="223" data-slot="1" alt="Hytte 223" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="223" data-slot="2" alt="Eiere hytte 223" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 223</div>
@@ -1873,8 +1867,8 @@
   <!-- ══ HYTTE 224 ══ -->
   <article class="cabin-card" id="hytte-224">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/bg6CjZd8/Siljeholmen-224.jpg" data-cabin="224" data-slot="1" alt="Hytte 224" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="224" data-slot="2" alt="Eiere hytte 224" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="224" data-slot="1" alt="Hytte 224" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="224" data-slot="2" alt="Eiere hytte 224" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 224</div>
@@ -1890,8 +1884,8 @@
   <!-- ══ HYTTE 225 ══ -->
   <article class="cabin-card" id="hytte-225">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="225" data-slot="1" alt="Hytte 225" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="225" data-slot="2" alt="Eiere hytte 225" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="225" data-slot="1" alt="Hytte 225" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="225" data-slot="2" alt="Eiere hytte 225" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 225</div>
@@ -1907,8 +1901,8 @@
   <!-- ══ HYTTE 226 ══ -->
   <article class="cabin-card" id="hytte-226">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/FLbs5qh7/Siljeholmen-226.jpg" data-cabin="226" data-slot="1" alt="Hytte 226" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="226" data-slot="2" alt="Eiere hytte 226" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="226" data-slot="1" alt="Hytte 226" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="226" data-slot="2" alt="Eiere hytte 226" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 226</div>
@@ -1924,8 +1918,8 @@
   <!-- ══ HYTTE 227 ══ -->
   <article class="cabin-card" id="hytte-227">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/x81KLFM0/Siljeholmen-227.jpg" data-cabin="227" data-slot="1" alt="Hytte 227" /></div>
-      <div class="img-square"><img src="https://i.ibb.co/bMDFL6Vx/Siljeholmen-227-eier.jpg" data-cabin="227" data-slot="2" alt="Eiere hytte 227" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="227" data-slot="1" alt="Hytte 227" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="227" data-slot="2" alt="Eiere hytte 227" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 227</div>
@@ -1941,8 +1935,8 @@
   <!-- ══ HYTTE 228 ══ -->
   <article class="cabin-card" id="hytte-228">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="228" data-slot="1" alt="Hytte 228" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="228" data-slot="2" alt="Eiere hytte 228" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="228" data-slot="1" alt="Hytte 228" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="228" data-slot="2" alt="Eiere hytte 228" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 228</div>
@@ -1958,8 +1952,8 @@
   <!-- ══ HYTTE 232 ══ -->
   <article class="cabin-card" id="hytte-232">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="232" data-slot="1" alt="Hytte 232" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="232" data-slot="2" alt="Eiere hytte 232" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="232" data-slot="1" alt="Hytte 232" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="232" data-slot="2" alt="Eiere hytte 232" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 232</div>
@@ -1975,8 +1969,8 @@
   <!-- ══ HYTTE 234 ══ -->
   <article class="cabin-card" id="hytte-234">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="234" data-slot="1" alt="Hytte 234" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="234" data-slot="2" alt="Eiere hytte 234" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="234" data-slot="1" alt="Hytte 234" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="234" data-slot="2" alt="Eiere hytte 234" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 234</div>
@@ -1992,8 +1986,8 @@
   <!-- ══ HYTTE 236 ══ -->
   <article class="cabin-card" id="hytte-236">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/mrVLQ3mv/Siljeholmen-236.jpg" data-cabin="236" data-slot="1" alt="Hytte 236" /></div>
-      <div class="img-square"><img src="https://i.ibb.co/Xkf5ZzQz/Siljeholmen-236-eier.jpg" data-cabin="236" data-slot="2" alt="Eiere hytte 236" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="236" data-slot="1" alt="Hytte 236" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="236" data-slot="2" alt="Eiere hytte 236" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 236</div>
@@ -2009,8 +2003,8 @@
   <!-- ══ HYTTE 238 ══ -->
   <article class="cabin-card" id="hytte-238">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="238" data-slot="1" alt="Hytte 238" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="238" data-slot="2" alt="Eiere hytte 238" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="238" data-slot="1" alt="Hytte 238" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="238" data-slot="2" alt="Eiere hytte 238" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 238</div>
@@ -2026,8 +2020,8 @@
   <!-- ══ HYTTE 239 ══ -->
   <article class="cabin-card" id="hytte-239">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/wZpkLwXB/Siljeholmen-239.jpg" data-cabin="239" data-slot="1" alt="Hytte 239" /></div>
-      <div class="img-square"><img src="https://i.ibb.co/Y7Qyf10z/Siljeholmen-239-eier-Lisemarit-Lars-J-rgen.jpg" data-cabin="239" data-slot="2" alt="Eiere hytte 239" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="239" data-slot="1" alt="Hytte 239" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="239" data-slot="2" alt="Eiere hytte 239" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 239</div>
@@ -2043,8 +2037,8 @@
   <!-- ══ HYTTE 240 ══ -->
   <article class="cabin-card" id="hytte-240">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://i.ibb.co/HfFrtYq3/Siljeholmen-240.jpg" data-cabin="240" data-slot="1" alt="Hytte 240" /></div>
-      <div class="img-square"><img src="https://i.ibb.co/nqrSTfyg/Siljeholmen-240-eier.jpg" data-cabin="240" data-slot="2" alt="Eiere hytte 240" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="240" data-slot="1" alt="Hytte 240" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="240" data-slot="2" alt="Eiere hytte 240" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 240</div>
@@ -2060,8 +2054,8 @@
   <!-- ══ HYTTE 242 ══ -->
   <article class="cabin-card" id="hytte-242">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="242" data-slot="1" alt="Hytte 242" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="242" data-slot="2" alt="Eiere hytte 242" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="242" data-slot="1" alt="Hytte 242" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="242" data-slot="2" alt="Eiere hytte 242" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 242</div>
@@ -2077,8 +2071,8 @@
   <!-- ══ HYTTE 244 ══ -->
   <article class="cabin-card" id="hytte-244">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="244" data-slot="1" alt="Hytte 244" /></div>
-      <div class="img-square"><img src="https://i.ibb.co/ycGkchTh/Siljeholmen-244-eiere.jpg" data-cabin="244" data-slot="2" alt="Eiere hytte 244" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="244" data-slot="1" alt="Hytte 244" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="244" data-slot="2" alt="Eiere hytte 244" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 244</div>
@@ -2094,8 +2088,8 @@
   <!-- ══ HYTTE 245 ══ -->
   <article class="cabin-card" id="hytte-245">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="245" data-slot="1" alt="Hytte 245" /></div>
-      <div class="img-square"><img src="https://i.ibb.co/j9Kh5dnz/Siljeholmen-245-eier.jpg" data-cabin="245" data-slot="2" alt="Eiere hytte 245" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="245" data-slot="1" alt="Hytte 245" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="245" data-slot="2" alt="Eiere hytte 245" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 245</div>
@@ -2111,8 +2105,8 @@
   <!-- ══ HYTTE 246 ══ -->
   <article class="cabin-card" id="hytte-246">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="246" data-slot="1" alt="Hytte 246" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="246" data-slot="2" alt="Eiere hytte 246" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="246" data-slot="1" alt="Hytte 246" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="246" data-slot="2" alt="Eiere hytte 246" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 246</div>
@@ -2128,8 +2122,8 @@
   <!-- ══ HYTTE 247 ══ -->
   <article class="cabin-card" id="hytte-247">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="247" data-slot="1" alt="Hytte 247" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="247" data-slot="2" alt="Eiere hytte 247" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="247" data-slot="1" alt="Hytte 247" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="247" data-slot="2" alt="Eiere hytte 247" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 247</div>
@@ -2145,8 +2139,8 @@
   <!-- ══ HYTTE 248 ══ -->
   <article class="cabin-card" id="hytte-248">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="248" data-slot="1" alt="Hytte 248" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="248" data-slot="2" alt="Eiere hytte 248" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="248" data-slot="1" alt="Hytte 248" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="248" data-slot="2" alt="Eiere hytte 248" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 248</div>
@@ -2162,8 +2156,8 @@
   <!-- ══ HYTTE 249 ══ -->
   <article class="cabin-card" id="hytte-249">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="249" data-slot="1" alt="Hytte 249" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="249" data-slot="2" alt="Eiere hytte 249" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="249" data-slot="1" alt="Hytte 249" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="249" data-slot="2" alt="Eiere hytte 249" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 249</div>
@@ -2179,8 +2173,8 @@
   <!-- ══ HYTTE 250 ══ -->
   <article class="cabin-card" id="hytte-250">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="250" data-slot="1" alt="Hytte 250" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="250" data-slot="2" alt="Eiere hytte 250" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="250" data-slot="1" alt="Hytte 250" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="250" data-slot="2" alt="Eiere hytte 250" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 250</div>
@@ -2196,8 +2190,8 @@
   <!-- ══ HYTTE 261 ══ -->
   <article class="cabin-card" id="hytte-261">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="261" data-slot="1" alt="Hytte 261" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="261" data-slot="2" alt="Eiere hytte 261" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="261" data-slot="1" alt="Hytte 261" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="261" data-slot="2" alt="Eiere hytte 261" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 261</div>
@@ -2213,8 +2207,8 @@
   <!-- ══ HYTTE 263 ══ -->
   <article class="cabin-card" id="hytte-263">
     <div class="cabin-images">
-      <div class="img-landscape"><img src="https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer" data-cabin="263" data-slot="1" alt="Hytte 263" /></div>
-      <div class="img-square"><img src="https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" data-cabin="263" data-slot="2" alt="Eiere hytte 263" /></div>
+      <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="263" data-slot="1" alt="Hytte 263" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="263" data-slot="2" alt="Eiere hytte 263" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 263</div>
@@ -2234,7 +2228,6 @@
 </footer>
 
 <script>
-// ── BILDELENKER: endre bildeurl her, gjelder automatisk overalt ──
 // ── BILDELENKER: endre bildeurl her, gjelder automatisk overalt ──
 // ── BILDELENKER: endre bildeurl her, gjelder automatisk overalt ──
 const cabinData = {
@@ -2343,9 +2336,7 @@ function fillCabinImages() {
   document.querySelectorAll('img[data-cabin]').forEach(img => {
     const id = img.getAttribute('data-cabin');
     const slot = img.getAttribute('data-slot');
-    if (cabinData[id] && !img.src) {
-      img.src = slot === '1' ? cabinData[id].img1 : cabinData[id].img2;
-    } else if (cabinData[id] && img.getAttribute('src') === '') {
+    if (cabinData[id]) {
       img.src = slot === '1' ? cabinData[id].img1 : cabinData[id].img2;
     }
   });
