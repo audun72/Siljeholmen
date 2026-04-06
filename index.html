@@ -585,7 +585,7 @@
         <span class="tag tag-location" onclick="showMap(1,'Rode Midt')">📍 Rode Midt</span>
         <span class="tag tag-residents">👤 Merethe Rennemo &amp; Audun Smørgrav</span>
       </div>
-      <p class="cabin-desc">Hytta ble opprinnelig påbegynt i 1954 og stod ferdig noen år senere. Merethe og Audun kjøpte hytta av Bent Åserud våren 2021 – den var på det tidspunktet i svært dårlig forfatning og ble kjøpt som et rent renoveringsobjekt. Siden den gang har hytta gjennomgått en omfattende rehabilitering.</p>
+      <p class="cabin-desc">Hytta er bygget på slutten av 1950-tallet og ble kjøpt av Merethe og Audun våren 2021. Hytta har blitt betydelig oppgradert i perioden 2021–2026.</p>
     </div>
   </article>
 
@@ -814,7 +814,7 @@
   <article class="cabin-card" id="hytte-21-Syd">
     <div class="cabin-images">
       <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="21-Syd" data-slot="1" alt="Hytte 21 Syd" /></div>
-      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="21" data-slot="2" alt="Eiere hytte 21" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="21-Syd" data-slot="2" alt="Eiere hytte 21" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 21 Syd</div>
@@ -831,7 +831,7 @@
   <article class="cabin-card" id="hytte-21-Nord">
     <div class="cabin-images">
       <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="21-Nord" data-slot="1" alt="Hytte 21 Nord" /></div>
-      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="21" data-slot="2" alt="Eiere hytte 21" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="21-Nord" data-slot="2" alt="Eiere hytte 21" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 21 Nord</div>
@@ -1116,8 +1116,8 @@
     </div>
   </article>
 
-  <!-- ══ HYTTE 56 - ØNSKET Å RESERVERE SEG MOT OVERSIKTEN 
-    <article class="cabin-card" id="hytte-56">
+  <!-- ══ HYTTE 56 ══ -->
+  <article class="cabin-card" id="hytte-56">
     <div class="cabin-images">
       <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="56" data-slot="1" alt="Hytte 56" /></div>
       <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="56" data-slot="2" alt="Eiere hytte 56" /></div>
@@ -1132,8 +1132,6 @@
       <p class="cabin-desc">Her kommer en beskrivelse av hytta og dens eiere. Vi venter på innspill.</p>
     </div>
   </article>
-  ══ -->
-
 
   <!-- ══ HYTTE 59 ══ -->
   <article class="cabin-card" id="hytte-59">
@@ -1411,7 +1409,7 @@
   <article class="cabin-card" id="hytte-94-syd">
     <div class="cabin-images">
       <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="94-syd" data-slot="1" alt="Hytte 94 syd" /></div>
-      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="94" data-slot="2" alt="Eiere hytte 94" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="94-syd" data-slot="2" alt="Eiere hytte 94" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 94 Syd</div>
@@ -1428,7 +1426,7 @@
   <article class="cabin-card" id="hytte-94-nord">
     <div class="cabin-images">
       <div class="img-landscape"><img referrerpolicy="no-referrer" src="" data-cabin="94-nord" data-slot="1" alt="Hytte 94 nord" /></div>
-      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="94" data-slot="2" alt="Eiere hytte 94" /></div>
+      <div class="img-square"><img referrerpolicy="no-referrer" src="" data-cabin="94-nord" data-slot="2" alt="Eiere hytte 94" /></div>
     </div>
     <div class="cabin-body">
       <div class="cabin-number">Siljeholmen 94 Nord</div>
@@ -2232,103 +2230,103 @@
 <script>
 // ── BILDELENKER: endre bildeurl her, gjelder automatisk overalt ──
 const cabinData = {
-  "1": { img1: "https://i.ibb.co/4n4GbHPP/Hytte001.jpg", img2: "https://i.ibb.co/v4MTDwMg/SIljeholmen-1-eiere.jpg" },
-  "2": { img1: "https://i.ibb.co/5XwYkyGK/Hytte002.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "1": { img1: "https://i.ibb.co/4n4GbHPP/Hytte001.jpg", img2: "https://i.ibb.co/Xfv7c2JQ/Hytte001-eiere.jpg" },
+  "2": { img1: "https://i.ibb.co/5XwYkyGK/Hytte002.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
   "3": { img1: "https://i.ibb.co/QFqPpsGq/Hytte003.jpg", img2: "https://i.ibb.co/wNxVy8dk/Siljeholmen-3-eier.jpg" },
-  "4": { img1: "https://i.ibb.co/nNmkPTVH/Hytte004.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "5": { img1: "https://i.ibb.co/kg5ZV1wr/Hytte005.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "4": { img1: "https://i.ibb.co/nNmkPTVH/Hytte004.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "5": { img1: "https://i.ibb.co/kg5ZV1wr/Hytte005.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
   "6": { img1: "https://i.ibb.co/673rfS02/Hytte006.jpg", img2: "https://i.ibb.co/4RWS3hzz/Hytte006eier.jpg" },
-  "9": { img1: "https://i.ibb.co/3mW5rN2s/Hytte009.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "11": { img1: "https://i.ibb.co/dJJ7s3xh/Hytte011.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "13": { img1: "https://i.ibb.co/mVHn18z4/Hytte013-JPG.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "14": { img1: "https://i.ibb.co/d4hHrDDC/Hytte014.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "15": { img1: "https://i.ibb.co/kVZxhGcW/Hytte015.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "16": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "18": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "20": { img1: "https://i.ibb.co/kgYgYPCV/Hytte020.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "21-Syd": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "21-Nord": { img1: "https://i.ibb.co/v4VP6y7X/Hytte021-N.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "25": { img1: "https://i.ibb.co/PZzMKYZq/Siljeholmen-25.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "26": { img1: "https://i.ibb.co/whqCTkyF/Hytte026.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "28": { img1: "https://i.ibb.co/rT5ctsK/Hytte028.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "29": { img1: "https://i.ibb.co/G4CnRjGg/Siljeholmen-29.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "33": { img1: "https://i.ibb.co/YTkxv3vs/Siljeholmen-33.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "35": { img1: "https://i.ibb.co/4nrFG2Kc/Siljeholmen-35.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "9": { img1: "https://i.ibb.co/3mW5rN2s/Hytte009.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "11": { img1: "https://i.ibb.co/dJJ7s3xh/Hytte011.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "13": { img1: "https://i.ibb.co/mVHn18z4/Hytte013-JPG.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "14": { img1: "https://i.ibb.co/d4hHrDDC/Hytte014.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "15": { img1: "https://i.ibb.co/kVZxhGcW/Hytte015.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "16": { img1: "https://i.ibb.co/j7LYznk/Bilde-av-hytta-venter.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "18": { img1: "https://i.ibb.co/j7LYznk/Bilde-av-hytta-venter.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "20": { img1: "https://i.ibb.co/kgYgYPCV/Hytte020.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "21-Syd": { img1: "https://i.ibb.co/j7LYznk/Bilde-av-hytta-venter.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "21-Nord": { img1: "https://i.ibb.co/v4VP6y7X/Hytte021-N.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "25": { img1: "https://i.ibb.co/PZzMKYZq/Siljeholmen-25.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "26": { img1: "https://i.ibb.co/whqCTkyF/Hytte026.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "28": { img1: "https://i.ibb.co/rT5ctsK/Hytte028.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "29": { img1: "https://i.ibb.co/G4CnRjGg/Siljeholmen-29.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "33": { img1: "https://i.ibb.co/YTkxv3vs/Siljeholmen-33.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "35": { img1: "https://i.ibb.co/4nrFG2Kc/Siljeholmen-35.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
   "37": { img1: "https://i.ibb.co/FbQyg5NW/Hytte037.jpg", img2: "https://i.ibb.co/Kx8mFNS8/Hytte0037eier.jpg" },
-  "39": { img1: "https://i.ibb.co/FLQgjbmY/Hytte039.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "41": { img1: "https://i.ibb.co/LdQCfhTW/Hytte041.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "43": { img1: "https://i.ibb.co/mVpk8c36/Hytte043.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "45": { img1: "https://i.ibb.co/B5z7WSjv/Hytte045.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "39": { img1: "https://i.ibb.co/FLQgjbmY/Hytte039.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "41": { img1: "https://i.ibb.co/LdQCfhTW/Hytte041.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "43": { img1: "https://i.ibb.co/mVpk8c36/Hytte043.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "45": { img1: "https://i.ibb.co/B5z7WSjv/Hytte045.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
   "47": { img1: "https://i.ibb.co/fzN3dRBH/Hytte047.jpg", img2: "https://i.ibb.co/WW04MjQZ/Hytte047eier.jpg" },
-  "48": { img1: "https://i.ibb.co/S4Jqvrz9/Hytte048.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "51": { img1: "https://i.ibb.co/6Jbfxz5k/Hytte051.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "53": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "54": { img1: "https://i.ibb.co/W4kKXZ72/Siljeholmen-54.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "56": { img1: "https://i.ibb.co/JRCpj7SV/Siljeholmen-56.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "59": { img1: "https://i.ibb.co/nqF0KcT0/Siljeholmen-59.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "61": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "63": { img1: "https://i.ibb.co/9HwGPhZ2/Hytte063.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "69": { img1: "https://i.ibb.co/S7MddSph/Siljeholmen-69.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "74": { img1: "https://i.ibb.co/M3xSPkr/Hytte074.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "76": { img1: "https://i.ibb.co/MDv3nCc9/Hytte076.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "78": { img1: "https://i.ibb.co/ynj03c3K/Hytte078.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "48": { img1: "https://i.ibb.co/S4Jqvrz9/Hytte048.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "51": { img1: "https://i.ibb.co/6Jbfxz5k/Hytte051.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "53": { img1: "https://i.ibb.co/j7LYznk/Bilde-av-hytta-venter.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "54": { img1: "https://i.ibb.co/W4kKXZ72/Siljeholmen-54.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "56": { img1: "https://i.ibb.co/JRCpj7SV/Siljeholmen-56.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "59": { img1: "https://i.ibb.co/nqF0KcT0/Siljeholmen-59.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "61": { img1: "https://i.ibb.co/j7LYznk/Bilde-av-hytta-venter.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "63": { img1: "https://i.ibb.co/9HwGPhZ2/Hytte063.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "69": { img1: "https://i.ibb.co/S7MddSph/Siljeholmen-69.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "74": { img1: "https://i.ibb.co/M3xSPkr/Hytte074.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "76": { img1: "https://i.ibb.co/MDv3nCc9/Hytte076.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "78": { img1: "https://i.ibb.co/ynj03c3K/Hytte078.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
   "79": { img1: "https://i.ibb.co/bMGgdrD1/Hytte079.jpg", img2: "https://i.ibb.co/Ld6KpfZQ/Hytte79eier.jpg" },
-  "80": { img1: "https://i.ibb.co/KxG8ShPb/Hytte080.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "82": { img1: "https://i.ibb.co/fVFj0KP9/Hytte082.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "84": { img1: "https://i.ibb.co/0j3Mx1TN/Siljeholmen-84.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "80": { img1: "https://i.ibb.co/KxG8ShPb/Hytte080.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "82": { img1: "https://i.ibb.co/fVFj0KP9/Hytte082.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "84": { img1: "https://i.ibb.co/0j3Mx1TN/Siljeholmen-84.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
   "86": { img1: "https://i.ibb.co/F4QtFSVd/Hytte086.jpg", img2: "https://i.ibb.co/27sJBTtC/Hytte086eier.jpg" },
-  "88": { img1: "https://i.ibb.co/0pKxBmtF/Siljeholmen-88.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "90": { img1: "https://i.ibb.co/ds3h6dk7/Siljeholmen-90.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "92": { img1: "https://i.ibb.co/1Gkvmjyy/Siljeholmen-92.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "93": { img1: "https://i.ibb.co/JjsrzrHq/Hytte093.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "94-syd": { img1: "https://i.ibb.co/LhCB4M8D/Siljeholmen-94-Syd.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "94-nord": { img1: "https://i.ibb.co/sp301zRX/Hytte094-N.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "95": { img1: "https://i.ibb.co/xK79mR2X/Hytte095.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "96": { img1: "https://i.ibb.co/JwG883ZX/Siljeholmen-96.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "88": { img1: "https://i.ibb.co/0pKxBmtF/Siljeholmen-88.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "90": { img1: "https://i.ibb.co/ds3h6dk7/Siljeholmen-90.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "92": { img1: "https://i.ibb.co/1Gkvmjyy/Siljeholmen-92.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "93": { img1: "https://i.ibb.co/JjsrzrHq/Hytte093.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "94-syd": { img1: "https://i.ibb.co/LhCB4M8D/Siljeholmen-94-Syd.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "94-nord": { img1: "https://i.ibb.co/sp301zRX/Hytte094-N.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "95": { img1: "https://i.ibb.co/xK79mR2X/Hytte095.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "96": { img1: "https://i.ibb.co/JwG883ZX/Siljeholmen-96.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
   "97": { img1: "https://i.ibb.co/q3QFKMny/Hytte097.jpg", img2: "https://i.ibb.co/xKDQV6c2/Hytte097eier.jpg" },
-  "98": { img1: "https://i.ibb.co/6R9hxTNp/Hytte098.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "100": { img1: "https://i.ibb.co/bR3V2hs3/Hytte100.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "101": { img1: "https://i.ibb.co/fGL8vv9n/Hytte101.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "102": { img1: "https://i.ibb.co/G4XfXTnQ/Hytte102.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "108": { img1: "https://i.ibb.co/23JwXB0r/Hytte108.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "109": { img1: "https://i.ibb.co/ycLGrDMK/Hytte109.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "111": { img1: "https://i.ibb.co/BpXv4Sc/Hytte111.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "112": { img1: "https://i.ibb.co/SXqSH9Ld/Hytte112.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "98": { img1: "https://i.ibb.co/6R9hxTNp/Hytte098.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "100": { img1: "https://i.ibb.co/bR3V2hs3/Hytte100.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "101": { img1: "https://i.ibb.co/fGL8vv9n/Hytte101.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "102": { img1: "https://i.ibb.co/G4XfXTnQ/Hytte102.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "108": { img1: "https://i.ibb.co/23JwXB0r/Hytte108.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "109": { img1: "https://i.ibb.co/ycLGrDMK/Hytte109.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "111": { img1: "https://i.ibb.co/BpXv4Sc/Hytte111.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "112": { img1: "https://i.ibb.co/SXqSH9Ld/Hytte112.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
   "202": { img1: "https://i.ibb.co/ZpQjZsVH/Hytte202.jpg", img2: "https://i.ibb.co/h1tf4JL0/Hytte202eier.jpg" },
-  "205": { img1: "https://i.ibb.co/zhT326YM/Hytte205.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "206": { img1: "https://i.ibb.co/d4tjqs0h/Hytte206.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "205": { img1: "https://i.ibb.co/zhT326YM/Hytte205.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "206": { img1: "https://i.ibb.co/d4tjqs0h/Hytte206.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
   "208": { img1: "https://i.ibb.co/Z6tf7yxw/Hytte208-3.jpg", img2: "https://i.ibb.co/Q785RXJ7/Hytte208eier.jpg" },
-  "210": { img1: "https://i.ibb.co/7d7cJdxR/Hytte210.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "211": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "212": { img1: "https://i.ibb.co/Mkcp90pv/Hytte212.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "213": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "215": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "217": { img1: "https://i.ibb.co/sdb6qR66/Hytte217.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "210": { img1: "https://i.ibb.co/7d7cJdxR/Hytte210.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "211": { img1: "https://i.ibb.co/j7LYznk/Bilde-av-hytta-venter.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "212": { img1: "https://i.ibb.co/Mkcp90pv/Hytte212.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "213": { img1: "https://i.ibb.co/j7LYznk/Bilde-av-hytta-venter.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "215": { img1: "https://i.ibb.co/j7LYznk/Bilde-av-hytta-venter.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "217": { img1: "https://i.ibb.co/sdb6qR66/Hytte217.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
   "220": { img1: "https://i.ibb.co/0psrYVtw/Hytte220.jpg", img2: "https://i.ibb.co/99K5hPq9/Hytte220eier.jpg" },
-  "221": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "222": { img1: "https://i.ibb.co/yFyX9Bh6/Hytte222.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "223": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "224": { img1: "https://i.ibb.co/GX1qFk0/Hytte224.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "225": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "226": { img1: "https://i.ibb.co/HpBdDDMm/Hytte226.jpg", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "221": { img1: "https://i.ibb.co/j7LYznk/Bilde-av-hytta-venter.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "222": { img1: "https://i.ibb.co/yFyX9Bh6/Hytte222.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "223": { img1: "https://i.ibb.co/j7LYznk/Bilde-av-hytta-venter.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "224": { img1: "https://i.ibb.co/GX1qFk0/Hytte224.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "225": { img1: "https://i.ibb.co/j7LYznk/Bilde-av-hytta-venter.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "226": { img1: "https://i.ibb.co/HpBdDDMm/Hytte226.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
   "227": { img1: "https://i.ibb.co/ZRC3TKns/Hytte227.jpg", img2: "https://i.ibb.co/r2vGV1Mv/Hytte227eier.jpg" },
-  "228": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "232": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "234": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "228": { img1: "https://i.ibb.co/j7LYznk/Bilde-av-hytta-venter.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "232": { img1: "https://i.ibb.co/j7LYznk/Bilde-av-hytta-venter.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "234": { img1: "https://i.ibb.co/j7LYznk/Bilde-av-hytta-venter.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
   "236": { img1: "https://i.ibb.co/fdmCKT55/Hytte236.jpg", img2: "https://i.ibb.co/mZMczkz/Hytte236eier.jpg" },
-  "238": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
+  "238": { img1: "https://i.ibb.co/j7LYznk/Bilde-av-hytta-venter.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
   "239": { img1: "https://i.ibb.co/Y7WSrktW/Hytte239.jpg", img2: "https://i.ibb.co/W45Nvkgy/Hytte239eier.jpg" },
   "240": { img1: "https://i.ibb.co/ZzkvCXWb/Hytte240.jpg", img2: "https://i.ibb.co/R4MNmjmQ/Hytte240eier.jpg" },
-  "242": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "244": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://i.ibb.co/KzjwTCHs/Hytte244eier.jpg" },
-  "245": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://i.ibb.co/hRZZrKHq/Hytte245eier.jpg" },
-  "246": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "247": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "248": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "249": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "250": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "261": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" },
-  "263": { img1: "https://placehold.co/800x600/ede6da/8a7a6a?text=Bilde+kommer", img2: "https://placehold.co/600x600/f0e8dc/3b2a1a?text=Bilde+kommer" }
+  "242": { img1: "https://i.ibb.co/j7LYznk/Bilde-av-hytta-venter.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "244": { img1: "https://i.ibb.co/j7LYznk/Bilde-av-hytta-venter.jpg", img2: "https://i.ibb.co/KzjwTCHs/Hytte244eier.jpg" },
+  "245": { img1: "https://i.ibb.co/j7LYznk/Bilde-av-hytta-venter.jpg", img2: "https://i.ibb.co/hRZZrKHq/Hytte245eier.jpg" },
+  "246": { img1: "https://i.ibb.co/j7LYznk/Bilde-av-hytta-venter.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "247": { img1: "https://i.ibb.co/j7LYznk/Bilde-av-hytta-venter.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "248": { img1: "https://i.ibb.co/j7LYznk/Bilde-av-hytta-venter.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "249": { img1: "https://i.ibb.co/j7LYznk/Bilde-av-hytta-venter.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "250": { img1: "https://i.ibb.co/j7LYznk/Bilde-av-hytta-venter.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "261": { img1: "https://i.ibb.co/j7LYznk/Bilde-av-hytta-venter.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" },
+  "263": { img1: "https://i.ibb.co/j7LYznk/Bilde-av-hytta-venter.jpg", img2: "https://i.ibb.co/5hy51cvf/Hyttefolk-venter.jpg" }
 };
 
 
